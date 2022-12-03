@@ -1,0 +1,56 @@
+{
+	"private": true,
+	"name": "buddy-care",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"engines": {
+		"node": ">=16",
+		"npm": ">=8"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Jau2002/buddy-care.git"
+	},
+	"keywords": [],
+	"contributors": [
+		{
+			"name": "Daniela Pourrieux"
+		},
+		{
+			"name": "Leandra Carolina Ríos"
+		},
+		{
+			"name": "Asdrúbal Mejía",
+			"email": "asdrumejia19@gmail.com",
+			"url": "https://github.com/Asdrumejia"
+		},
+		{
+			"name": "Fabial Leonardo Peralta",
+			"url": "https://github.com/fabiansf01"
+		},
+		{
+			"name": "Andres Salmon",
+			"url": "https://github.com/Tbownt"
+		},
+		{
+			"name": "Alejandro Marin",
+			"url": "https://github.com/KleverKobold"
+		},
+		{
+			"name": "Luciano Navarro",
+			"url": "https://github.com/Coderman47"
+		}
+	],
+	"author": "Jaume Suarez Molina <santjaume02@gmail.com> (https://co.linkedin.com/in/jaumesuarez)",
+	"license": "MIT",
+	"volta": {
+		"node": ">=16.17.0"
+	},
+	"bugs": {
+		"url": "https://github.com/Jau2002/buddy-care/issues"
+	},
+	"homepage": "https://github.com/Jau2002/buddy-care#readme"
+}
