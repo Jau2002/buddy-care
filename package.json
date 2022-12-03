@@ -20,7 +20,9 @@
 			"name": "Daniela Pourrieux"
 		},
 		{
-			"name": "Leandra Carolina Ríos"
+			"name": "Leandra Carolina Ríos",
+			"email": "caritu_rios@hotmail.com",
+			"url": "https://github.com/CarolinaRios92"
 		},
 		{
 			"name": "Asdrúbal Mejía",
@@ -56,5 +58,8 @@
 	"bugs": {
 		"url": "https://github.com/Jau2002/buddy-care/issues"
 	},
-	"homepage": "https://github.com/Jau2002/buddy-care#readme"
+	"homepage": "https://github.com/Jau2002/buddy-care#readme",
+	"dependencies": {
+		"typescript": "4.9.3"
+	}
 }
