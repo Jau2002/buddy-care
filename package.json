@@ -4,8 +4,10 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"format": "prettier --config \".prettierrc.yaml\" -u --no-editorconfig -w \"**/**/**.{ts,tsx}\" --ignore-path \".gitignore\"",
-		"lint": "eslint -c \".eslintrc.yaml\" --fix \"**/**/*.{ts,tsx}\" --color"
+		"format": "prettier --config -c \".prettierrc.yaml\" -u --no-editorconfig -w \"**/**/**.{ts,tsx}\" --ignore-path \".gitignore\"",
+		"lint": "eslint -c \".eslintrc.yaml\" --fix \"**/**/*.{ts,tsx}\" --color",
+		"format:ci": "prettier --config \".prettierrc.yaml\" -l --no-editorconfig --ignore-path \".gitignore\"",
+		"lint:ci": "eslint -c \".eslintrc.yaml\" --quiet \"**/**/*.{ts,tsx}\""
 	},
 	"engines": {
 		"node": ">=16",
