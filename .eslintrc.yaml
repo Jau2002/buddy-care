@@ -1,0 +1,35 @@
+env:
+  browser: true
+  es2022: true
+  node: true
+extends:
+  - plugin:react/recommended
+  - standard-with-typescript
+  - prettier
+overrides: []
+parserOptions:
+  ecmaVersion: latest
+  project:
+    - tsconfig.json
+plugins:
+  - react
+rules:
+  indent: 0
+  curly:
+    - 2
+    - all
+  lines-around-comment: 0
+  max-len: 0
+  no-confusing-arrow: 0
+  no-mixed-operators: 2
+  no-tabs:
+    - 2
+    - allowIndentationTabs: true
+  no-unexpected-multiline: 2
+  quotes:
+    - 2
+    - single
+    - avoidEscape: true
+      allowTemplateLiterals: false
+  no-restricted-syntax: 0
+ignorePatterns: ['node_modules/']
