@@ -20,8 +20,8 @@
 //                           aaaaaaaaaaaaaaaaaaaaaaaa
 //                        *      aaaaaaaaaaaaaaaa
 
-const server = require('./src/middlewares/app');
+import server from './middlewares/app';
 
 const PORT = 3001;
 
-server.listen(PORT, console.log(`http://localhost:${PORT}`));
+server.listen(PORT, (): any => console.log(`http://localhost:${PORT}`));
