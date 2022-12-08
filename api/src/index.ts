@@ -20,8 +20,21 @@
 //                           aaaaaaaaaaaaaaaaaaaaaaaa
 //                        *      aaaaaaaaaaaaaaaa
 
-import server from './middlewares/app';
+import * as dotenv from 'dotenv';
+import sequelize from './config/db';
+import app from './middlewares/app';
+import { Client, Port } from './types';
 
-const PORT = 3001;
+dotenv.config({ path: '.env.development' });
 
-server.listen(PORT, (): any => console.log(`http://localhost:${PORT}`));
+const PORT: Port = process.env.PORT ?? 3001;
+
+sequelize
+	.sync({ force: true })
+	.then(
+		(): Client =>
+			app.listen(PORT, () => console.log(`http://localhost:${PORT}`))
+	)
+	.catch((err): never => {
+		throw new Error(err);
+	});
