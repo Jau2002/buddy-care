@@ -2,7 +2,7 @@ import { NOT_FOUND, OK } from '../protocols';
 
 function getHealth(_: any, res: any): any {
 	try {
-		return res.status(OK).send({ message: 'the server is running' });
+		return res.status(OK).send({ message: 'the server is running faster' });
 	} catch (err: any) {
 		return res.status(NOT_FOUND).send({ message: err.message });
 	}
