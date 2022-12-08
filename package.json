@@ -27,7 +27,7 @@
 			"name": "Daniela Pourrieux"
 		},
 		{
-			"name": "Leandra Carolina Ríos",
+			"name": "Leandra Carolina Rios",
 			"email": "caritu_rios@hotmail.com",
 			"url": "https://github.com/CarolinaRios92"
 		},
@@ -37,12 +37,12 @@
 			"url": "https://github.com/Asdrumejia"
 		},
 		{
-			"name": "Fabial Leonardo Peralta",
+			"name": "Fabia Leonardo Peralta",
 			"email": "fabianperaltasfco@gmail.com",
 			"url": "https://github.com/fabiansf01"
 		},
 		{
-			"name": "Andres Salmon",
+			"name": "Andres Jose Salom Chirinos",
 			"email": "andresjose65@hotmail.com",
 			"url": "https://github.com/Tbownt"
 		},
@@ -52,7 +52,7 @@
 			"url": "https://github.com/KleverKobold"
 		},
 		{
-			"name": "Luciano Navarro",
+			"name": "Luciano Nicolás Navarro",
 			"email": "askinglucho@gmail.com",
 			"url": "https://github.com/Coderman47"
 		}
@@ -66,12 +66,9 @@
 		"url": "https://github.com/Jau2002/buddy-care/issues"
 	},
 	"homepage": "https://github.com/Jau2002/buddy-care#readme",
-	"dependencies": {
-		"typescript": "4.9.3"
-	},
 	"devDependencies": {
-		"@types/node": "18.11.10",
 		"@typescript-eslint/eslint-plugin": "5.45.0",
+		"@typescript-eslint/parser": "5.45.1",
 		"eslint": "8.29.0",
 		"eslint-config-prettier": "8.5.0",
 		"eslint-config-standard-with-typescript": "23.0.0",
@@ -79,6 +76,8 @@
 		"eslint-plugin-n": "15.5.1",
 		"eslint-plugin-promise": "6.1.1",
 		"eslint-plugin-react": "7.31.11",
-		"prettier": "2.8.0"
+		"prettier": "2.8.0",
+		"rimraf": "3.0.2",
+		"typescript": "4.9.3"
 	}
 }

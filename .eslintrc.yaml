@@ -4,15 +4,19 @@ env:
   node: true
 extends:
   - plugin:react/recommended
+  - plugin:@typescript-eslint/recommended
   - standard-with-typescript
   - prettier
 overrides: []
+root: true
+parser: '@typescript-eslint/parser'
 parserOptions:
   ecmaVersion: latest
   project:
-    - tsconfig.json
+    - './api/tsconfig.json'
 plugins:
   - react
+  - '@typescript-eslint'
 rules:
   indent: 0
   curly:
@@ -32,4 +36,5 @@ rules:
     - avoidEscape: true
       allowTemplateLiterals: false
   no-restricted-syntax: 0
+  '@typescript-eslint/no-var-requires': 0
 ignorePatterns: ['node_modules/']
