@@ -1,10 +1,11 @@
+import { Request, Response } from 'express';
 import { NOT_FOUND, OK } from '../protocols';
 
-function getHealth(_: any, res: any): any {
+function getHealth(_: Request, res: Response): Response {
 	try {
 		return res.status(OK).send({ message: 'the server is running faster' });
-	} catch (err: any) {
-		return res.status(NOT_FOUND).send({ message: err.message });
+	} catch (err) {
+		return res.status(NOT_FOUND).send({ message: (err as Error).message });
 	}
 }
 
