@@ -14,6 +14,7 @@ parserOptions:
   ecmaVersion: latest
   project:
     - './api/tsconfig.json'
+    - './client/tsconfig.json'
 plugins:
   - react
   - '@typescript-eslint'
@@ -40,4 +41,6 @@ rules:
   '@typescript-eslint/restrict-template-expressions':
     - 2
     - allowNullish: true
-ignorePatterns: ['node_modules/', '**/build']
+  react/jsx-runtime: 0
+  react/react-in-jsx-scope: 0
+ignorePatterns: ['node_modules/', '**/build', '**/dist', 'vite.config.ts']
