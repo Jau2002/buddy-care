@@ -20,12 +20,9 @@
 //                           aaaaaaaaaaaaaaaaaaaaaaaa
 //                        *      aaaaaaaaaaaaaaaa
 
-import * as dotenv from 'dotenv';
 import sequelize from './config/db';
 import app from './middlewares/app';
 import { Client, Port } from './types';
-
-dotenv.config({ path: '.env.development' });
 
 const PORT: Port = process.env.PORT ?? 3001;
 
