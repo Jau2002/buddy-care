@@ -5,12 +5,12 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, NODE_ENV } = process.env;
 const sequelize =
 	NODE_ENV === 'production'
 		? new Sequelize({
-				database: DB_NAME ?? 'db',
+				database: DB_NAME ?? 'buddycare',
 				dialect: 'postgres',
 				host: DB_HOST ?? 'localhost',
 				port: 5432,
 				username: DB_USER ?? 'postgres',
-				password: DB_PASSWORD ?? 'default',
+				password: DB_PASSWORD ?? '',
 				pool: {
 					max: 3,
 					min: 1,
@@ -26,9 +26,7 @@ const sequelize =
 				ssl: true,
 		  })
 		: new Sequelize(
-				`postgres://${DB_USER ?? 'postgres'}:${DB_PASSWORD ?? ''}@${
-					DB_HOST ?? 'localhost'
-				}/buddycare`,
+				`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/buddycare`,
 				{
 					logging: false,
 					native: false,

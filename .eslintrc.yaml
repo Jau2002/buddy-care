@@ -37,4 +37,7 @@ rules:
       allowTemplateLiterals: false
   no-restricted-syntax: 0
   '@typescript-eslint/no-var-requires': 0
+  '@typescript-eslint/restrict-template-expressions':
+    - 2
+    - allowNullish: true
 ignorePatterns: ['node_modules/', '**/build']
