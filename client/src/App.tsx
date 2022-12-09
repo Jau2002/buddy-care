@@ -1,7 +1,8 @@
 import { ReactElement } from 'react';
+import Home from './components/Home/Home';
 
 function App(): ReactElement {
-	return <h1>Building...</h1>;
+	return <Home />;
 }
 
 export default App;
