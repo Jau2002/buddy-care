@@ -7,7 +7,7 @@ import store from './app/store';
 import './sass/styles.scss';
 
 axios.defaults.baseURL =
-	import.meta.env.VITE_APP_API ?? 'http://localhost:3001';
+	import.meta.env.VITE_APP_API ?? 'http://localhost:3000';
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
 root.render(
