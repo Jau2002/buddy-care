@@ -1,4 +1,4 @@
-import { StatusCode } from '../types';
+import { StatusCode } from '../../types';
 
 export const OK: StatusCode = 200;
 

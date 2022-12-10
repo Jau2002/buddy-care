@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { NOT_FOUND, OK } from '../protocols';
+import { NOT_FOUND, OK } from '../protocols/protocols';
 
 function getHealth(_: Request, res: Response): Response {
 	try {
