@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import App from './App';
 import store from './app/store';
 import './sass/styles.scss';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 axios.defaults.baseURL =
 	import.meta.env.VITE_APP_API ?? 'http://localhost:3000';
