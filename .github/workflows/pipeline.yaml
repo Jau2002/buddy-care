@@ -16,6 +16,7 @@ jobs:
       - name: Commit linter
         uses: webiny/action-conventional-commits@v1.1.0
   format:
+    needs: [Commit]
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code repository
@@ -31,8 +32,25 @@ jobs:
         run: npm ci
       - name: Perf format
         run: npm run format:ci
+  style:
+    needs: [Commit]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+          node-version: 'lts/gallium'
+      - name: Install dependencies
+        run: npm ci
+      - name: Perf format
+        run: npm run style:ci --workspace=client
   lint:
-    needs: [commit, format]
+    needs: [Style, format]
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code repository
