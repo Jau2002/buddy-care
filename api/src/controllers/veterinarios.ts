@@ -9,7 +9,6 @@ export async function getVeterinarios(_:Request, res:Response) {
     });
     res.json(xVeterinarios);
   } catch (error) {
-    console.log("error detectado")
     res.status(500).json({
       message: (error as Error).message,
     });

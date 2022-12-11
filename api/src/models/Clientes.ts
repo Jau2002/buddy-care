@@ -8,7 +8,7 @@ export const Clientes = sequelize.define(
 		id: { type: DataTypes.INTEGER, primaryKey: true, allowNull: false },
 		apellido: { type: DataTypes.STRING, allowNull: false },
 		nombres: { type: DataTypes.STRING, allowNull: false },
-		país: { type: DataTypes.STRING, allowNull: false },
+		pais: { type: DataTypes.STRING, allowNull: false },
 		localidad: { type: DataTypes.STRING, allowNull: false },
 		direccion: { type: DataTypes.STRING, allowNull: false },
 		cp: { type: DataTypes.STRING, allowNull: false },
