@@ -7,3 +7,9 @@ interface ImportMetaEnv {
 interface ImportMeta {
 	readonly env: ImportMetaEnv;
 }
+
+interface RouteError {
+	status: number;
+	statusText: string;
+	error: object;
+}
