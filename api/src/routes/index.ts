@@ -9,6 +9,7 @@ import Operadores from './Operadores.routes';
 import Rubros from './Rubros.routes';
 import Veterinarios from './Veterinarios.routes';
 import Veterinarias from './Veterinarias.routes';
+import Query from './Query.routes';
 
 const routes = Router();
 
@@ -23,6 +24,7 @@ routes.use('/operadores', Operadores);
 routes.use('/rubros', Rubros);
 routes.use('/veterinarias', Veterinarias);
 routes.use('/veterinarios', Veterinarios);
+routes.use('/queri', Query);
 
 
 export default routes;
