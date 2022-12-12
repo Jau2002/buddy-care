@@ -9,7 +9,7 @@ export async function getHistoriaclinicas(_:Request, res:Response) {
     });
     res.json(xHistoriaclinicas);
   } catch (error) {
-    res.status(500).json({
+    res.status(404).json({
       message: (error as Error).message,
     });
   }
@@ -19,22 +19,10 @@ export async function createHistoriaclinicas(req:any, res:any) {
   const {id, id_mascota, id_veterinario,  nomenclador, descripcion, falta, faccion, halta, adjuntos} = req.body;
   try {
     let newHistoriaclinicas = await Historiaclinica.create(
-      {
-        id,
-        id_mascota,
-        id_veterinario, 
-         nomenclador,
-         descripcion,
-         falta, 
-         faccion,
-        halta,
-        adjuntos,  
-      },
-      
-    );
+      {id, id_mascota, id_veterinario, nomenclador, descripcion, falta, faccion, halta, adjuntos});
     return res.json(newHistoriaclinicas);
   } catch (error) {
-    res.status(500).json({
+    res.status(404).json({
       message: (error as Error).message,
     });
   }
@@ -42,7 +30,7 @@ export async function createHistoriaclinicas(req:any, res:any) {
 };
 
 export async function getHistoriaclinica(req:Request, res:Response) {
-  const { id } = req.params;
+  const {id} = req.params;
   try {
     const xHistoriaclinica = await Historiaclinica.findOne({
       where: {
@@ -51,7 +39,7 @@ export async function getHistoriaclinica(req:Request, res:Response) {
     });
     res.json(xHistoriaclinica);
   } catch (error) {
-    res.status(500).json({
+    res.status(404).json({
       message: (error as Error).message,
     });
   }
@@ -59,8 +47,8 @@ export async function getHistoriaclinica(req:Request, res:Response) {
 
 export const updateHistoriaclinicas = async (req:any, res:any) => {
   try {
-    const { id } = req.params;
-    const {id_mascota ,id_veterinario,  nomenclador, descripcion, falta, faccion, halta, adjuntos} = req.body;
+    const {id} = req.params;
+    const {id_mascota ,id_veterinario, nomenclador, descripcion, falta, faccion, halta, adjuntos} = req.body;
 
     const historiaclinica: any | null = await Historiaclinica.findByPk(id);
    
@@ -77,21 +65,21 @@ export const updateHistoriaclinicas = async (req:any, res:any) => {
 
     res.json(historiaclinica);
   } catch (error) {
-    return res.status(500).json({message: (error as Error).message});
+    return res.status(404).json({message: (error as Error).message});
   }
 };
 
 export async function deleteHistoriaclinica(req:Request, res:Response) {
-  const { id } = req.params;
+  const {id} = req.params;
   try {
     await Historiaclinica.destroy({
       where: {
         id,
       },
     });
-    return res.sendStatus(204);
+    return res.sendStatus(200);
   } catch (error) {
-    return res.status(500).json({message: (error as Error).message});
+    return res.status(404).json({message: (error as Error).message});
   }
 };
 
