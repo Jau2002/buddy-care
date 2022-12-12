@@ -1,20 +1,17 @@
 import { ReactElement } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
-import Error from './pages/Error';
+import NotFound from './pages/NotFound';
 
-const App = (): ReactElement => {
+function App(): ReactElement {
 	const router = createBrowserRouter([
 		{
 			path: '/',
 			element: <Home />,
-		},
-		{
-			path: '*',
-			element: <Error />,
+			errorElement: <NotFound />,
 		},
 	]);
 	return <RouterProvider router={router} />;
-};
+}
 
 export default App;

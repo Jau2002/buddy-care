@@ -1,9 +1,9 @@
 import { ReactElement } from 'react';
-import Footer from '../components/Footer/Footer';
-import Header from '../components/Header/Header';
-import Urgencias from '../components/Urgencias/Urgencias';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Urgencias from '../components/Urgencias';
 
-const Home = (): ReactElement => {
+function Home(): ReactElement {
 	return (
 		<div>
 			<Header />
@@ -19,6 +19,6 @@ const Home = (): ReactElement => {
 			<Footer />
 		</div>
 	);
-};
+}
 
 export default Home;
