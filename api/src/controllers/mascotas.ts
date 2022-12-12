@@ -9,8 +9,7 @@ export async function getMascotas(_:Request, res:Response) {
     });
     res.json(xMascotas);
   } catch (error) {
-    console.log("error detectado")
-    res.status(500).json({
+    res.status(404).json({
       message: (error as Error).message,
     });
   }
@@ -20,28 +19,10 @@ export async function createMascotas(req:any, res:any) {
   const {id, id_cliente, nombre, especie, raza, edad, peso, estado, id_madre, id_padre, adjuntos, nota, chip, falta, halta} = req.body;
   try {
     let newMascotas = await Mascotas.create(
-      {
-        id ,
-        id_cliente,
-        nombre,
-        especie,
-        raza,
-        edad,
-        peso,
-        estado,
-        id_madre,
-        id_padre,
-        adjuntos,
-        nota,
-        chip,
-        falta,
-        halta,
-      },
-      
-    );
+      {id, id_cliente, nombre, especie, raza, edad, peso, estado, id_madre, id_padre, adjuntos, nota, chip, falta, halta});
     return res.json(newMascotas);
   } catch (error) {
-    res.status(500).json({
+    res.status(404).json({
       message: (error as Error).message,
     });
   }
@@ -49,7 +30,7 @@ export async function createMascotas(req:any, res:any) {
 };
 
 export async function getMascota(req:Request, res:Response) {
-  const { id } = req.params;
+  const {id} = req.params;
   try {
     const Mascota = await Mascotas.findOne({
       where: {
@@ -58,7 +39,7 @@ export async function getMascota(req:Request, res:Response) {
     });
     res.json(Mascota);
   } catch (error) {
-    res.status(500).json({
+    res.status(404).json({
       message: (error as Error).message,
     });
   }
@@ -66,7 +47,7 @@ export async function getMascota(req:Request, res:Response) {
 
 export const updateMascotas = async (req:any, res:any) => {
   try {
-    const { id } = req.params;
+    const {id} = req.params;
     const {id_cliente, nombre, especie, raza, edad, peso, estado, id_madre, id_padre, adjuntos, nota, chip, falta, halta} = req.body;
 
     const mascota: any | null = await Mascotas.findByPk(id);
@@ -86,26 +67,25 @@ export const updateMascotas = async (req:any, res:any) => {
     mascota.falta = falta;
     mascota.halta = halta;
        
-    
     await mascota.save();
 
     res.json(mascota);
   } catch (error) {
-    return res.status(500).json({ message: (error as Error).message });
+    return res.status(404).json({message: (error as Error).message});
   }
 };
 
 export async function deleteMascota(req:Request, res:Response) {
-    const { id } = req.params;
+    const {id} = req.params;
   try {
     await Mascotas.destroy({
       where: {
         id,
       },
     });
-    return res.sendStatus(204);
+    return res.sendStatus(200);
   } catch (error) {
-    return res.status(500).json({message: (error as Error).message});
+    return res.status(404).json({message: (error as Error).message});
   }
 };
 

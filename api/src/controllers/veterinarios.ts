@@ -9,7 +9,7 @@ export async function getVeterinarios(_:Request, res:Response) {
     });
     res.json(xVeterinarios);
   } catch (error) {
-    res.status(500).json({
+    res.status(404).json({
       message: (error as Error).message,
     });
   }
@@ -19,20 +19,10 @@ export async function createVeterinarios(req:any, res:any) {
   const {id, nombre, nota, telefono, email, falta, halta} = req.body;
   try {
     let newVeterinarios = await Veterinarios.create(
-      {
-        id ,
-        nombre,
-        nota ,
-        telefono,
-        email,
-        falta,
-        halta,
-      },
-      
-    );
+      {id, nombre, nota, telefono, email, falta, halta});
     return res.json(newVeterinarios);
   } catch (error) {
-    res.status(500).json({
+    res.status(404).json({
       message: (error as Error).message,
     });
   }
@@ -49,7 +39,7 @@ export async function getVeterinario(req:Request, res:Response) {
     });
     res.json(Veterinario);
   } catch (error) {
-    res.status(500).json({
+    res.status(404).json({
       message: (error as Error).message,
     });
   }
@@ -73,20 +63,20 @@ export const updateVeterinarios = async (req:any, res:any) => {
 
     res.json(veterinario);
   } catch (error) {
-    return res.status(500).json({ message: (error as Error).message });
+    return res.status(404).json({ message: (error as Error).message });
   }
 };
 
 export async function deleteVeterinario(req: Request, res: Response) {
-  const { id } = req.params;
+  const {id} = req.params;
   try {
     await Veterinarios.destroy({
       where: {
         id,
       },
     });
-    return res.sendStatus(204);
+    return res.sendStatus(200);
   } catch (error) {
-    return res.status(500).json({message: (error as Error).message});
+    return res.status(404).json({message: (error as Error).message});
   }
 };
