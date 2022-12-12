@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 // import { Link } from 'react-router-dom';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
-import logo from '../../assets/img/logo_blanco.png';
+import logo from '../assets/img/logo_blanco.png';
 // import Login from '../Login/Login';
 
 /* // <div className='navbar navbar-dark bg-dark'>

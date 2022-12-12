@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-const Footer = (): ReactElement => {
+function Footer(): ReactElement {
 	return (
 		<div>
 			<h1>Conocenos</h1>
@@ -8,6 +8,6 @@ const Footer = (): ReactElement => {
 			<h1>Contactos</h1>
 		</div>
 	);
-};
+}
 
 export default Footer;

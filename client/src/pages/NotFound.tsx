@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 
-const Error = (): ReactElement => {
+function NotFound(): ReactElement {
 	return <div>Error</div>;
-};
+}
 
-export default Error;
+export default NotFound;

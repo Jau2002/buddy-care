@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 
-const Urgencias = (): ReactElement => {
+function Urgencias(): ReactElement {
 	return <div>Urgencias</div>;
-};
+}
 
 export default Urgencias;
