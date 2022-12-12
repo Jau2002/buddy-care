@@ -1,4 +1,5 @@
 .env.development
 node_modules/
 build/
-.env.development
+dist/
+npm-debug.log*
