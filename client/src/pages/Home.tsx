@@ -6,9 +6,9 @@ import Urgencias from '../components/Urgencias';
 function Home(): ReactElement {
 	return (
 		<>
-			<head className='head'>
+			<header className='header'>
 				<Header />
-			</head>
+			</header>
 			<main className='main'>
 				<Urgencias />
 			</main>

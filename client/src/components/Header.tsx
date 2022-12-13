@@ -1,9 +1,11 @@
 import { ReactElement } from 'react';
+import { navigation } from '../utils/routes';
+import Nav from './Nav';
 
 function Header(): ReactElement {
 	return (
 		<>
-			<h1>header</h1>
+			<Nav link={navigation} />
 		</>
 	);
 }
