@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { NavLink } from 'react-router-dom';
-import type { LinkRoutes, Navigate, useNavLink } from '../vite-env';
+import type { Navigate } from '../utils/utils';
+import type { LinkRoutes, useNavLink } from './components';
 
 function Nav({ link }: LinkRoutes): ReactElement {
 	const active = 'underline';
