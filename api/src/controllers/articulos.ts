@@ -5,8 +5,7 @@ import { Articulos } from "../models/Articulos";
 export async function getArticulos(_:Request, res:Response) {
   try {
     const xArticulos = await Articulos.findAll({
-      attributes: ["id", "nombre", "rubro", "descripcion", "fotos", "id_vet", "precio", "stock", "ptoped", "ptovta", "overstock", "evento", "falta", "halta", "fmodif", "hmodif", "id_operador", "estado"]
-    });
+      attributes: ["id", "nombre", "rubro", "descripcion", "fotos", "id_vet", "precio", "stock", "ptoped", "ptovta", "overstock", "evento", "falta", "halta", "fmodif", "hmodif", "id_operador", "estado"]});
     res.json(xArticulos);
   } catch (error) {
     res.status(404).json({

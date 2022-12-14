@@ -5,8 +5,7 @@ import { Operadores } from "../models/Operadores";
 export async function getOperadors(_:Request, res:Response) {
   try {
     const xOperadors = await Operadores.findAll({
-      attributes: ["id",	"nombre", 	"usuario", 	"password",	"email", "rol", "estado", "falta", "halta"]
-    });
+      attributes: ["id",	"nombre", 	"usuario", 	"password",	"email", "rol", "estado", "falta", "halta"]});
     res.json(xOperadors);
   } catch (error) {
     res.status(404).json({

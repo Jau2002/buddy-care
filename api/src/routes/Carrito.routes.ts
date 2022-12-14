@@ -5,7 +5,7 @@ import {
   updateCarritos,
   getCarrito,
   deleteCarrito,
-} from "../controllers/carrito.controller";
+} from "../controllers/carrito";
 
 const Carrito = Router();
 

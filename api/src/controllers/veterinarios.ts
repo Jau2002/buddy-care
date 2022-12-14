@@ -5,8 +5,7 @@ import { Veterinarios } from "../models/Veterinarios";
 export async function getVeterinarios(_:Request, res:Response) {
   try {
     const xVeterinarios = await Veterinarios.findAll({
-      attributes: ["id", "nombre", "nota", "telefono", "email", "falta", "halta"]
-    });
+      attributes: ["id", "nombre", "nota", "telefono", "email", "falta", "halta"]});
     res.json(xVeterinarios);
   } catch (error) {
     res.status(404).json({

@@ -5,8 +5,7 @@ import { Clientes } from "../models/Clientes";
 export async function getClientes(_:Request, res:Response) {
   try {
     const xClientes = await Clientes.findAll({
-      attributes: ["id" , "apellido",	"nombres", "pais", "localidad", "direccion", "cp", "telefono", "email", "usuario", "password", "facebook", "instagram" , "notas_int" , "falta", "halta"],
-    });
+      attributes: ["id" , "apellido",	"nombres", "pais", "localidad", "direccion", "cp", "telefono", "email", "usuario", "password", "facebook", "instagram" , "notas_int" , "falta", "halta"]});
     res.json(xClientes);
   } catch (error) {
     res.status(404).json({
