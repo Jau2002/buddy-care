@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../config/db';
 
 export const Carrito = sequelize.define(
-	'pfvet_carritos',
+	'pfvet_carrito',
 	{
 		id: { type: DataTypes.INTEGER, primaryKey: true, allowNull: false },
 		id_cliente: { type: DataTypes.INTEGER, allowNull: false },

@@ -5,8 +5,7 @@ import { Historiaclinica }  from "../models/HistoriaClinica";
 export async function getHistoriaclinicas(_:Request, res:Response) {
   try {
     const xHistoriaclinicas = await Historiaclinica.findAll({
-      attributes: ["id", "id_mascota", "id_veterinario", "nomenclador", "descripcion", "falta", "faccion", "halta", "adjuntos"]
-    });
+      attributes: ["id", "id_mascota", "id_veterinario", "nomenclador", "descripcion", "falta", "faccion", "halta", "adjuntos"]});
     res.json(xHistoriaclinicas);
   } catch (error) {
     res.status(404).json({

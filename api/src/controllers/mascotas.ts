@@ -5,8 +5,7 @@ import { Mascotas }  from "../models/Mascotas";
 export async function getMascotas(_:Request, res:Response) {
   try {
     const xMascotas = await Mascotas.findAll({
-      attributes: ["id", "id_cliente", "nombre", "especie", "raza", "edad", "peso", "estado", "id_madre", "id_padre", "adjuntos", "nota", "chip", "falta", "halta"]
-    });
+      attributes: ["id", "id_cliente", "nombre", "especie", "raza", "edad", "peso", "estado", "id_madre", "id_padre", "adjuntos", "nota", "chip", "falta", "halta"]});
     res.json(xMascotas);
   } catch (error) {
     res.status(404).json({

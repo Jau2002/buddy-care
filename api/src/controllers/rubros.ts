@@ -5,8 +5,7 @@ import { Rubros }  from "../models/Rubros";
 export async function getRubros(_:Request, res:Response) {
   try {
     const xRubros = await Rubros.findAll({
-      attributes: ["id", "descripcion", "foto", "estado"],
-    });
+      attributes: ["id", "descripcion", "foto", "estado"]});
     res.json(xRubros);
   } catch (error) {
     res.status(404).json({

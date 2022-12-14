@@ -5,8 +5,7 @@ import { Veterinarias } from "../models/Veterinarias";
 export async function getVeterinarias(_:Request, res:Response) {
   try {
     const xVeterinarias = await Veterinarias.findAll({
-      attributes: ["id", "razon", "responsable", "provincia", "localidad", "direccion", "telefono", "facebook", "instagram", "descripcion", "fotos", "falta", "halta", "estado", "usuario", "password", "email"]
-    });
+      attributes: ["id", "razon", "responsable", "provincia", "localidad", "direccion", "telefono", "facebook", "instagram", "descripcion", "fotos", "falta", "halta", "estado", "usuario", "password", "email"]});
     res.json(xVeterinarias);
   } catch (error) {
     console.log("error detectado")
