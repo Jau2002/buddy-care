@@ -43,4 +43,6 @@ rules:
     - allowNullish: true
   react/jsx-runtime: 0
   react/react-in-jsx-scope: 0
+  '@typescript-eslint/strict-boolean-expressions': 0
+  prefer-const: 0
 ignorePatterns: ['node_modules/', '**/build', '**/dist', 'vite.config.ts']

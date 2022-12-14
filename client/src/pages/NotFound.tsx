@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { Link, useRouteError } from 'react-router-dom';
-import type { RouteError } from '../vite-env';
+import type { RouteError } from './pages';
 
 function NotFound(): ReactElement {
 	const { status, statusText } = useRouteError() as RouteError;
