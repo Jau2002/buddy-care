@@ -17,12 +17,19 @@ function Forms({ form, submit }: FormsAssociation): ReactElement {
 			{(): ReactElement => (
 				<Form>
 					{form.map(
-						({ id, name, placeholder, type }: Attributes): ReactElement => (
+						({
+							id,
+							name,
+							placeholder,
+							type,
+							display,
+						}: Attributes): ReactElement => (
 							<Editable
 								key={id}
 								type={type}
 								placeholder={placeholder}
 								name={name}
+								display={display}
 							/>
 						)
 					)}

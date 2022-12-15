@@ -13,6 +13,7 @@ export interface Content {
 	type: string;
 	placeholder: string;
 	name: string;
+	display: string;
 }
 
 interface FormsAssociation {
@@ -23,4 +24,5 @@ interface FormsAssociation {
 interface Type {
 	email?: string;
 	password?: string;
+	code?: string;
 }

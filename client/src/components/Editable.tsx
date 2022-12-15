@@ -2,18 +2,18 @@ import { ErrorMessage, Field } from 'formik';
 import { ReactElement } from 'react';
 import type { Content } from './components';
 
-function Editable({ type, placeholder, name }: Content): ReactElement {
+function Editable({ type, placeholder, name, display }: Content): ReactElement {
 	return (
 		<section>
-			<label htmlFor={type}>{name}</label>
+			<label htmlFor={type}>{display}</label>
 			<Field
 				type={type}
 				id={type}
-				name={type}
+				name={name}
 				placeholder={placeholder}
 			/>
 			<ErrorMessage
-				name={type}
+				name={name}
 				component='span'
 			/>
 		</section>
