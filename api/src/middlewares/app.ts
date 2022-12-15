@@ -1,12 +1,16 @@
 import express, { NextFunction, Request, Response } from 'express';
 import morganBody from 'morgan-body';
+import cors from 'cors';
 import rootRoute from '../routes';
+
 
 const app = express();
 
 app.use(express.json({ strict: true }));
 
 app.use(express.urlencoded({ extended: true }));
+
+app.use(cors());
 
 app.use((_: Request, res: Response, next: NextFunction): any => {
 	res.header('Access-Control-Allow-Origin', '*');
