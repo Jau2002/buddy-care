@@ -1,0 +1,27 @@
+$Lato: 'Lato', sans-serif;
+$Open-Sans: 'Open Sans', sans-serif;
+
+@font-face {
+	font-family: 'Lato';
+	font-weight: 900;
+	font-style: normal;
+	src: url('../assets/fonts/Lato/Lato-Black.woff2') format('woff2');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-weight: 500;
+	font-style: normal;
+	src: url('../assets/fonts/Open-Sans/OpenSans-Medium.woff2') format('woff2');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-weight: 500;
+	font-style: italic;
+	src: url('../assets/fonts/Open-Sans/OpenSans-MediumItalic.woff2')
+		format('woff2');
+	font-display: swap;
+}
