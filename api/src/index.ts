@@ -27,7 +27,7 @@ import { Client, Port } from './types';
 const PORT: Port = process.env.PORT ?? 3001;
 
 sequelize
-	.sync({ force: true })
+	.sync({ force: false })
 	.then(
 		(): Client =>
 			app.listen(PORT, () => console.log(`http://localhost:${PORT}`))

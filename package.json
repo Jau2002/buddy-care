@@ -44,6 +44,7 @@
 	},
 	"homepage": "https://github.com/Jau2002/buddy-care#readme",
 	"devDependencies": {
+		"@types/cors": "^2.8.13",
 		"@typescript-eslint/eslint-plugin": "5.45.0",
 		"@typescript-eslint/parser": "5.45.1",
 		"eslint": "8.29.0",
