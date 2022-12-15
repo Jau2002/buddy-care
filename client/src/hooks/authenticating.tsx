@@ -1,10 +1,11 @@
-import type { Helpers, Type } from '../pages/pages';
+import type { Type } from '../components/components';
 // import validator from '../utils/validator';
-import type { Auth, Submit } from './hook';
+import md5 from 'md5';
+import type { Auth, Helpers, Submit } from './hook';
 
 function authenticating(): Auth {
 	const handleSubmit: Submit = (values: Type, { resetForm }: Helpers) => {
-		console.log(values);
+		md5(values.password);
 		resetForm();
 	};
 

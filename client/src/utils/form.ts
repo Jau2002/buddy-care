@@ -14,3 +14,12 @@ export const logIn: Attributes[] = [
 		name: 'Contraseña',
 	},
 ];
+
+export const email: Attributes[] = [
+	{
+		id: 3,
+		type: 'email',
+		placeholder: 'example@gmail.com',
+		name: 'Correo',
+	},
+];

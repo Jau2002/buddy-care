@@ -1,4 +1,4 @@
-import type { Type } from '../pages/pages';
+import type { Type } from '../components/components';
 
 function validator({ email }: Type): Type {
 	let errors: Type = {};
