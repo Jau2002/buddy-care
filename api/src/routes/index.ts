@@ -1,40 +1,47 @@
 import { Router } from 'express';
+import articles from './articles.routes';
+import categories from './categories.routes';
+import commerces from './commerces.routes';
+import customers from './customers.routes';
+import medicalRecords from './medicalRecords.routes';
 import monitored from './monitored.routes';
-import Articulos from './Articulos.routes';
-import Carrito from './Carrito.routes';
-import Clientes from './Clientes.routes';
-import Historiaclinica  from '../routes/Historiaclinica.routes';
-import Mascotas from './Mascotas.routes';
-import Operadores from './Operadores.routes';
-import Rubros from './Rubros.routes';
-import Veterinarios from './Veterinarios.routes';
-import Veterinarias from './Veterinarias.routes';
-import Query from './Query.routes';
-import Horarios from './Horarios.routes';
-import Commerces from './Commerces.routes';
-import Reviews  from './Reviews.routes';
+import operators from './operators.routes';
+import pets from './pets.routes';
+import query from './query.routes';
+import reviews from './reviews.routes';
+import schedules from './schedules.routes';
+import shoppingBasket from './shoppingBasket.routes';
+import veterinaries from './veterinaries.routes';
+import vets from './vets.routes';
 
-const routes = Router();
+const rootRoute: Router = Router();
 
-routes.use('/health', monitored);
+rootRoute.use('/health', monitored);
 
-routes.use('/articulos', Articulos);
-routes.use('/carrito', Carrito);
-routes.use('/clientes', Clientes);
-routes.use('/commerces', Commerces);
-routes.use('/historiaClinica', Historiaclinica);
-routes.use('/horarios', Horarios);
-routes.use('/mascotas', Mascotas);
-routes.use('/operadores', Operadores);
-routes.use('/reviews', Reviews);
-routes.use('/rubros', Rubros);
-routes.use('/veterinarias', Veterinarias);
-routes.use('/veterinarios', Veterinarios);
-routes.use('/queri', Query);
+rootRoute.use('/query', query);
 
+rootRoute.use('/articulos', articles);
 
+rootRoute.use('/carrito', shoppingBasket);
 
+rootRoute.use('/clientes', customers);
 
+rootRoute.use('/commerces', commerces);
 
+rootRoute.use('/historiaClinica', medicalRecords);
 
-export default routes;
+rootRoute.use('/horarios', schedules);
+
+rootRoute.use('/mascotas', pets);
+
+rootRoute.use('/operadores', operators);
+
+rootRoute.use('/reviews', reviews);
+
+rootRoute.use('/rubros', categories);
+
+rootRoute.use('/veterinarias', veterinaries);
+
+rootRoute.use('/veterinarios', vets);
+
+export default rootRoute;
