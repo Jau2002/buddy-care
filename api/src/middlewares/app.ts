@@ -1,8 +1,7 @@
+import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 import morganBody from 'morgan-body';
-import cors from 'cors';
 import rootRoute from '../routes';
-
 
 const app = express();
 
