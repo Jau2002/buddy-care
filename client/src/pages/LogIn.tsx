@@ -10,7 +10,23 @@ function LogIn(): ReactElement {
 				form={logIn}
 				submit='Iniciar sesión'
 			/>
-			<Link to='/logIn/usr'>Olvide mi Contraseña</Link>
+			<div className='input-form--div'>
+				<Link
+					to='/logIn/usr'
+					className='small text-muted'
+				>
+					Olvide mi Contraseña
+				</Link>
+				<p className='mb-5 pb-lg-2 input-form--p'>
+					No tienes cuenta?
+					<Link
+						className='input-form'
+						to='/logIn/usr'
+					>
+						Regístrate
+					</Link>
+				</p>
+			</div>
 		</>
 	);
 }
