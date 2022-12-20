@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import postReview from '../controllers/create/postReview';
-import deleteReview from '../controllers/Delete/deleteReview';
+import deleteReview from '../controllers/delete/deleteReview';
 import getAllReviews from '../controllers/read/getAllReviews';
 import getReview from '../controllers/read/getReview';
 import putReview from '../controllers/update/putReview';

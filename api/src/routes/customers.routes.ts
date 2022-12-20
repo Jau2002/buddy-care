@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import postCustomer from '../controllers/create/postCustomer';
-import deleteCustomer from '../controllers/Delete/deleteCustomer';
+import deleteCustomer from '../controllers/delete/deleteCustomer';
 import getAllCustomers from '../controllers/read/getAllCustomers';
 import getCustomer from '../controllers/read/getCustomer';
 import putCostumer from '../controllers/update/putCustomer';

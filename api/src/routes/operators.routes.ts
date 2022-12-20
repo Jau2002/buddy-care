@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import postOperator from '../controllers/create/postOperator';
-import deleteOperator from '../controllers/Delete/deleteOperator';
+import deleteOperator from '../controllers/delete/deleteOperator';
 import getAllOperators from '../controllers/read/getAllOperators';
 import getOperador from '../controllers/read/getOperator';
 import putOperator from '../controllers/update/putOperator';

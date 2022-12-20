@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import postVeterinary from '../controllers/create/postVeterinary';
-import deleteVeterinary from '../controllers/Delete/deleteVeterinary';
+import deleteVeterinary from '../controllers/delete/deleteVeterinary';
 import getAllVeterinaries from '../controllers/read/getAllVeterinaries';
 import getVeterinary from '../controllers/read/getVeterinary';
 import putVeterinary from '../controllers/update/putVeterinary';

@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import postCommerce from '../controllers/create/postCommerce';
-import deleteCommerce from '../controllers/Delete/deleteCommerce';
+import deleteCommerce from '../controllers/delete/deleteCommerce';
 import getAllCommerces from '../controllers/read/getAllCommerces';
 import getCommerce from '../controllers/read/getCommerce';
 import putCommerce from '../controllers/update/putCommerce';

@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import postPet from '../controllers/create/postPet';
-import deletePet from '../controllers/Delete/deletePet';
+import deletePet from '../controllers/delete/deletePet';
 import getAllPets from '../controllers/read/getAllPets';
 import getPet from '../controllers/read/getPet';
 import putPet from '../controllers/update/putPet';

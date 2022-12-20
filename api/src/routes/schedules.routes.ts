@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import postSchedule from '../controllers/create/postSchedule';
-import deleteSchedule from '../controllers/Delete/deleteSchedule';
+import deleteSchedule from '../controllers/delete/deleteSchedule';
 import getAllSchedule from '../controllers/read/getAllSchedules';
 import getSchedule from '../controllers/read/getSchedule';
 import putSchedule from '../controllers/update/putSchedule';

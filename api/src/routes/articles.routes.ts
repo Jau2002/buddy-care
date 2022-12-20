@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import postArticle from '../controllers/create/postArticle';
-import deleteArticle from '../controllers/Delete/deleteArticle';
+import deleteArticle from '../controllers/delete/deleteArticle';
 import getAllArticles from '../controllers/read/getAllArticles';
 import getArticle from '../controllers/read/getArticle';
 import putArticle from '../controllers/update/putArticle';

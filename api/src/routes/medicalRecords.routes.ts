@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import postMedicalRecord from '../controllers/create/postMedicalRecord';
-import deleteMedicalRecord from '../controllers/Delete/deleteMedicalRecord';
+import deleteMedicalRecord from '../controllers/delete/deleteMedicalRecord';
 import getAllMedicalRecords from '../controllers/read/getAllMedicalRecords';
 import getMedicalRecord from '../controllers/read/getMedicalRecord';
 

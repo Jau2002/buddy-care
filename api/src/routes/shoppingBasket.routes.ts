@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import postItemShoppingBasket from '../controllers/create/postItemShoppingBasket';
-import deleteItemShoppingBasket from '../controllers/Delete/deleteItemShoppingBasket';
+import deleteItemShoppingBasket from '../controllers/delete/deleteItemShoppingBasket';
 import getAllItemsShoppingBasket from '../controllers/read/getAllItemsShoppingBasket';
 import getItemShoppingBasket from '../controllers/read/getItemShoppingBasket';
 import putItemShoppingBasket from '../controllers/update/putItemShoppingBasket';
