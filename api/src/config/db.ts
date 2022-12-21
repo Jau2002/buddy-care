@@ -29,7 +29,7 @@ const sequelize =
 				ssl: true,
 		  })
 		: new Sequelize(
-				`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/buddycare`,
+				'postgres://djqjleey:x_ZBCp-Ew1Z8G3CCxyvX2cXNEGOtfPBZ@motty.db.elephantsql.com/djqjleey',
 				{
 					logging: false,
 					native: false,

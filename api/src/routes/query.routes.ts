@@ -3,6 +3,6 @@ import getByQuery from '../controllers/read/getByQuery';
 
 const query: Router = Router();
 
-query.get('/', getByQuery);
+query.post('/', getByQuery);
 
 export default query;
