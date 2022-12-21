@@ -5,18 +5,12 @@ import type { Content } from './components';
 function Editable({ type, placeholder, name, display }: Content): ReactElement {
 	return (
 		<section>
-			<label
-				htmlFor={type}
-				className='form-label'
-			>
-				{display}
-			</label>
+			<label htmlFor={type}>{display}</label>
 			<Field
 				type={type}
 				id={type}
 				name={name}
 				placeholder={placeholder}
-				className='form-control form-control-lg'
 			/>
 			<ErrorMessage
 				name={name}

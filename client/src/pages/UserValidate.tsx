@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import Forms from '../components/Forms';
 import { email } from '../utils/form';
 
-function Usr(): ReactElement {
+function UserValidate(): ReactElement {
 	return (
 		<Forms
 			form={email}
@@ -11,4 +11,4 @@ function Usr(): ReactElement {
 	);
 }
 
-export default Usr;
+export default UserValidate;

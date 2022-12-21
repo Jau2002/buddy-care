@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import Forms from '../components/Forms';
 import { passwords } from '../utils/form';
 
-function Pass(): ReactElement {
+function PasswordRecovery(): ReactElement {
 	return (
 		<Forms
 			form={passwords}
@@ -11,4 +11,4 @@ function Pass(): ReactElement {
 	);
 }
 
-export default Pass;
+export default PasswordRecovery;

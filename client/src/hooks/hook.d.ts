@@ -1,11 +1,9 @@
-import { FormikHelpers } from 'formik';
 import type { Type } from '../components/components';
 
-type Helpers = FormikHelpers<Type>;
-
-type Submit = (values: Type, { resetForm }: Helpers) => any;
+type Submit = (values: Type) => any;
 
 interface Auth {
 	handleSubmit: Submit;
 	defaultInputs: Type;
+	pathname: string;
 }

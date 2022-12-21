@@ -1,19 +1,32 @@
 import type { Type } from '../components/components';
 
-function validator({ email, password, code }: Type): Type {
+function validator({ email, password, code }: Type, pathname: string): Type {
 	let errors: Type = {};
-	if (!email) {
+
+	const { logInValidated, userValidated, changeValidated } = {
+		logInValidated: pathname === '/logIn',
+		userValidated: pathname === '/logIn/user',
+		changeValidated: pathname === '/logIn/password',
+	};
+
+	if ((logInValidated || userValidated) && !email) {
 		errors.email = 'Por favor ingresa un correo electrónico';
-	} else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(email)) {
+	} else if (
+		(logInValidated || userValidated) &&
+		!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(String(email))
+	) {
 		errors.email =
 			'El correo solo puede contener letras, números, puntos, guiones y guion bajo.';
 	}
-	if (!password) {
+
+	if ((logInValidated || changeValidated) && !password) {
 		errors.password = 'Por favor ingresa una contraseña';
 	}
-	if (!code) {
+
+	if (changeValidated && !code) {
 		errors.code = 'Por favor ingresa el código';
 	}
+
 	return errors;
 }
 

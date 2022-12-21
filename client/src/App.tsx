@@ -3,8 +3,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import NotFound from './pages/NotFound';
-import Pass from './pages/Pass';
-import Usr from './pages/Usr';
+import PasswordRecovery from './pages/PasswordRecovery';
+import UserValidate from './pages/UserValidate';
 
 function App(): ReactElement {
 	const router = createBrowserRouter([
@@ -18,12 +18,12 @@ function App(): ReactElement {
 			element: <LogIn />,
 		},
 		{
-			path: '/logIn/usr',
-			element: <Usr />,
+			path: '/logIn/user',
+			element: <UserValidate />,
 		},
 		{
-			path: '/logIn/pass',
-			element: <Pass />,
+			path: '/logIn/password',
+			element: <PasswordRecovery />,
 		},
 	]);
 	return <RouterProvider router={router} />;
