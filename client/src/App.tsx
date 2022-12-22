@@ -14,15 +14,15 @@ function App(): ReactElement {
 			errorElement: <NotFound />,
 		},
 		{
-			path: '/logIn',
+			path: '/SignIn',
 			element: <LogIn />,
 		},
 		{
-			path: '/logIn/user',
+			path: '/SignIn/user',
 			element: <UserValidate />,
 		},
 		{
-			path: '/logIn/password',
+			path: '/SignIn/password',
 			element: <PasswordRecovery />,
 		},
 	]);

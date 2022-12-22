@@ -1,19 +1,17 @@
 .form-section {
-	background-color: #9a616d;
-
-	&--div {
-		border-radius: 1rem;
-	}
-
-	&--img {
-		border-radius: 1rem 0 0 1rem;
-	}
-
-	&--i {
-		color: #ff6219;
-	}
-
 	&--h5 {
 		letter-spacing: 1px;
+		font: 900 2em $Lato;
+	}
+
+	&--input {
+		font: 500 1em $Open-Sans;
+	}
+
+	&--div {
+		position: relative;
+		background: $white;
+		margin-top: 0.5rem;
+		margin-right: 3rem;
 	}
 }

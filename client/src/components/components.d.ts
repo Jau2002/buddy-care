@@ -19,6 +19,7 @@ export interface Content {
 interface FormsAssociation {
 	form: Attributes[];
 	submit: string;
+	title: string;
 }
 
 interface Type {

@@ -4,9 +4,9 @@ function validator({ email, password, code }: Type, pathname: string): Type {
 	let errors: Type = {};
 
 	const { logInValidated, userValidated, changeValidated } = {
-		logInValidated: pathname === '/logIn',
-		userValidated: pathname === '/logIn/user',
-		changeValidated: pathname === '/logIn/password',
+		logInValidated: pathname === '/SignIn/',
+		userValidated: pathname === '/SignIn/user',
+		changeValidated: pathname === '/SignIn/password',
 	};
 
 	if ((logInValidated || userValidated) && !email) {
@@ -26,7 +26,6 @@ function validator({ email, password, code }: Type, pathname: string): Type {
 	if (changeValidated && !code) {
 		errors.code = 'Por favor ingresa el código';
 	}
-
 	return errors;
 }
 

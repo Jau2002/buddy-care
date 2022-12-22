@@ -1,19 +1,30 @@
-import { useLocation } from 'react-router-dom';
-import { useAppDispatch } from '../app/hook';
+import { NavigateFunction, useLocation, useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../app/hook';
 import type { Type } from '../components/components';
 import { getUser } from '../features/logger/logInActions';
-import type { Auth, Submit } from './hook';
+import { selectLogIn } from '../features/logger/logInSlice';
+import { LogInAction } from '../features/reducers';
+import type { Auth, Location, Submit } from './hook';
 
 function authenticating(): Auth {
 	const dispatch = useAppDispatch();
 
-	const { pathname } = useLocation();
+	const { pathname } = useLocation() as Location;
 
-	const handleSubmit: Submit = (values: Type) => {
+	const logger: LogInAction[] = useAppSelector(selectLogIn);
+
+	const navigate: NavigateFunction = useNavigate();
+
+	const handleSubmit: Submit = ({ email, password }: Type) => {
 		const query = {
-			myQuery: `select email, password, apellido, nombres, id from pfvet_clientes WHERE trim(email)='${values.email?.trim()}' and trim(password)='${values.password?.trim()}' limit 1 ;`,
+			myQuery: `SELECT email, password, apellido, nombres, id FROM pfvet_clientes WHERE TRIM(email)='${email?.trim()}' AND TRIM(password)='${password?.trim()}' LIMIT 1;`,
 		};
 		dispatch(getUser(query));
+		logger.length
+			? setTimeout(() => {
+					navigate('/');
+			  }, 3000)
+			: navigate('/');
 	};
 
 	const defaultInputs: Type = {

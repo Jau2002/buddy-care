@@ -8,9 +8,9 @@ function Nav({ link }: LinkRoutes): ReactElement {
 	return (
 		<nav>
 			{link.map(
-				({ id, route, url }: Navigate): ReactElement => (
+				({ route, url }: Navigate, i: number): ReactElement => (
 					<NavLink
-						key={id}
+						key={i}
 						to={url}
 					>
 						{({ isActive }: useNavLink): ReactElement => (

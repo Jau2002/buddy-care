@@ -6,7 +6,7 @@ import type { Attributes } from '../utils/utils';
 import validator from '../utils/validator';
 import type { FormsAssociation, Type } from './components';
 
-function Forms({ form, submit }: FormsAssociation): ReactElement {
+function Forms({ form, submit, title }: FormsAssociation): ReactElement {
 	const { defaultInputs, handleSubmit, pathname } = authenticating();
 	return (
 		<Formik
@@ -15,16 +15,14 @@ function Forms({ form, submit }: FormsAssociation): ReactElement {
 			onSubmit={handleSubmit}
 		>
 			<Form>
+				<h5 className='fw-normal mb-3 pb-3 form-section--h5'>{title}</h5>
 				{form.map(
-					({
-						id,
-						name,
-						placeholder,
-						type,
-						display,
-					}: Attributes): ReactElement => (
+					(
+						{ name, placeholder, type, display }: Attributes,
+						i: number
+					): ReactElement => (
 						<Editable
-							key={id}
+							key={i}
 							type={type}
 							placeholder={placeholder}
 							name={name}
@@ -32,7 +30,14 @@ function Forms({ form, submit }: FormsAssociation): ReactElement {
 						/>
 					)
 				)}
-				<button type='submit'>{submit}</button>
+				<div className='pt-1 mb-4'>
+					<button
+						type='submit'
+						className='btn btn-dark btn-lg btn-block'
+					>
+						{submit}
+					</button>
+				</div>
 			</Form>
 		</Formik>
 	);
