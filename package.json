@@ -24,14 +24,6 @@
 	"keywords": [],
 	"contributors": [
 		{
-			"name": "Daniela Pourrieux"
-		},
-		{
-			"name": "Leandra Carolina Rios",
-			"email": "caritu_rios@hotmail.com",
-			"url": "https://github.com/CarolinaRios92"
-		},
-		{
 			"name": "Asdrúbal Alfonso Mejía López",
 			"email": "asdrumejia19@gmail.com",
 			"url": "https://github.com/Asdrumejia"
@@ -40,21 +32,6 @@
 			"name": "Fabia Leonardo Peralta",
 			"email": "fabianperaltasfco@gmail.com",
 			"url": "https://github.com/fabiansf01"
-		},
-		{
-			"name": "Andres Jose Salom Chirinos",
-			"email": "andresjose65@hotmail.com",
-			"url": "https://github.com/Tbownt"
-		},
-		{
-			"name": "Alejandro Marin",
-			"email": "alejm9494@gmail.com",
-			"url": "https://github.com/KleverKobold"
-		},
-		{
-			"name": "Luciano Nicolás Navarro",
-			"email": "askinglucho@gmail.com",
-			"url": "https://github.com/Coderman47"
 		}
 	],
 	"author": "Jaume Suarez Molina <santjaume02@gmail.com> (https://co.linkedin.com/in/jaumesuarez)",
@@ -67,6 +44,7 @@
 	},
 	"homepage": "https://github.com/Jau2002/buddy-care#readme",
 	"devDependencies": {
+		"@types/cors": "^2.8.13",
 		"@typescript-eslint/eslint-plugin": "5.45.0",
 		"@typescript-eslint/parser": "5.45.1",
 		"eslint": "8.29.0",
@@ -81,12 +59,7 @@
 		"typescript": "4.9.3"
 	},
 	"dependencies": {
-		"dotenv": "16.0.3",
-		"express": "^4.18.2",
-		"morgan": "^1.10.0",
-		"nodemon": "^2.0.20",
-		"pg": "^8.8.0",
-		"pg-hstore": "^2.3.4",
-		"sequelize": "^6.26.0"
+		"axios": "1.2.1",
+		"dotenv": "16.0.3"
 	}
 }

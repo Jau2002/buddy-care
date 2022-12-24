@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "api",
-	"main": "index.js",
+	"main": "index.ts",
 	"scripts": {
 		"tsc": "rimraf build & tsc",
 		"start": "node \"./build/index.js\"",

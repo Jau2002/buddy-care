@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import health from '../controllers/get/health';
+import health from '../controllers/read/getHealth';
 
-const monitoredRoute = Router();
+const monitoredRoute: Router = Router();
 
 monitoredRoute.get('/', health);
 
