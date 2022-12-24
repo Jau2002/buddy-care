@@ -7,6 +7,7 @@ function UserValidate(): ReactElement {
 		<Forms
 			form={email}
 			submit='Validar correo'
+			title='Verificar correo electrónico'
 		/>
 	);
 }
