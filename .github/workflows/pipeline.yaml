@@ -66,3 +66,34 @@ jobs:
         run: npm ci
       - name: Lint Perse
         run: npm run lint:ci
+  checkChangesClient:
+    needs: [lint]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Check changes in docs
+        uses: netlify/actions/diff-includes@master
+        with:
+          args: client
+  Build:
+    needs: [checkChangesClient]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Build
+        uses: netlify/actions/build@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          BUILD_DIR: client
+          NETLIFY_BASE: client
+          NETLIFY_CMD: npm build -w client
+          NETLIFY_DIR: client/dist
+
+
