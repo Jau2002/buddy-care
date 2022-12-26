@@ -15,10 +15,4 @@ declare global {
 
 export interface SequelizeProduction {
 	options?: Options;
-	database?: string;
-	dialect?: string;
-	host?: string;
-	port?: string | number;
-	username?: string;
-	password?: string;
 }
