@@ -8,7 +8,7 @@ $white: #fff;
 	font-family: Lato;
 	font-weight: 900;
 	font-style: normal;
-	src: url('../assets/fonts/Lato/Lato-Black.woff2') format('woff2');
+	src: url('/fonts/Lato/Lato-Black.woff2') format('woff2');
 	font-display: swap;
 }
 
@@ -16,7 +16,7 @@ $white: #fff;
 	font-family: 'Open Sans';
 	font-weight: 500;
 	font-style: normal;
-	src: url('../assets/fonts/Open-Sans/OpenSans-Medium.woff2') format('woff2');
+	src: url('/fonts/Open-Sans/OpenSans-Medium.woff2') format('woff2');
 	font-display: swap;
 }
 
@@ -24,7 +24,6 @@ $white: #fff;
 	font-family: 'Open Sans';
 	font-weight: 500;
 	font-style: italic;
-	src: url('../assets/fonts/Open-Sans/OpenSans-MediumItalic.woff2')
-		format('woff2');
+	src: url('/fonts/Open-Sans/OpenSans-MediumItalic.woff2') format('woff2');
 	font-display: swap;
 }

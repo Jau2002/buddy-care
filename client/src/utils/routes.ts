@@ -2,7 +2,7 @@ import type { Navigate } from './utils';
 
 export const navigation: Navigate[] = [
 	{
-		route: 'Registrase',
+		route: 'Registrarse',
 		url: '/SignIn/',
 	},
 	{
