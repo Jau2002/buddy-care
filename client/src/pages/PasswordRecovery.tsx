@@ -7,6 +7,7 @@ function PasswordRecovery(): ReactElement {
 		<Forms
 			form={passwords}
 			submit='Cambiar contraseña'
+			title='Verifica cambio de contraseña'
 		/>
 	);
 }
