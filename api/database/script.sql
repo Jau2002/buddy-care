@@ -20,7 +20,6 @@ DROP TABLE pfvet_reviews;
 
 
 
-
 /* TABLA PRINICPAL DE CLIENTES SUSCRIPTOS
 ------------------------------------------
 	id                   
@@ -42,25 +41,24 @@ DROP TABLE pfvet_reviews;
 */	
 
 CREATE  TABLE pfvet_clientes ( 
-	id                   integer  NOT NULL  ,
-	apellido             char(55)  NOT NULL  ,
-	nombres              char(55)  NOT NULL  ,
-	pais                 char(55)  NOT NULL  ,
-	localidad            char(55)  NOT NULL  ,
-	direccion            char(155)  NOT NULL  ,
-	cp                   char(20)  NOT NULL  ,
-	telefono             char(55)    ,
-	email                char(80)  NOT NULL  ,
-	usuario              char(25)  NOT NULL  ,
-	password          char(50) NOT NULL  ,
-	facebook             char(65)    ,
-	instagram            char(65)    ,
-	notas_int            text    ,
-	falta                date  NOT NULL  ,
-	halta                time  NOT NULL  ,
+	id                   integer  NOT NULL,
+	apellido             char(55)  NOT NULL,
+	nombres              char(55)  NOT NULL,
+	pais                 char(55)  NOT NULL,
+	localidad            char(55)  NOT NULL,
+	direccion            char(155)  NOT NULL,
+	cp                   char(20)  NOT NULL,
+	telefono             char(55),
+	email                char(80)  NOT NULL,
+	usuario              char(25)  NOT NULL,
+	password             char(50) NOT NULL,
+	facebook             char(65),
+	instagram            char(65),
+	notas_int            text,
+	falta                date  NOT NULL,
+	halta                time  NOT NULL,
 	CONSTRAINT pk_pfvet_clientes PRIMARY KEY ( id )
  );
-
 
 
 /* TABLA DE MASCOTAS DE CLIENTES
@@ -82,23 +80,22 @@ CREATE  TABLE pfvet_clientes (
 	halta		HORA DE ALTA
 */
 
-
 CREATE  TABLE pfvet_mascotas ( 
-	id                   integer  NOT NULL  ,
-	id_cliente           integer  NOT NULL  ,
-	nombre               char(65)  NOT NULL  ,
-	especie              char(65)  NOT NULL  ,
-	raza                 char(65)  NOT NULL  ,
-	edad                 integer  NOT NULL  ,
-	peso               integer    ,
-	estado               char(20)  NOT NULL  ,
-	id_madre             integer    ,
-	id_padre             integer    ,
-	adjuntos             text    ,
-	nota                 text    ,
-	chip                 integer    ,
-	falta                date    ,
-	halta                time    ,
+	id                   integer  NOT NULL,
+	id_cliente           integer  NOT NULL,
+	nombre               char(65)  NOT NULL,
+	especie              char(65)  NOT NULL,
+	raza                 char(65)  NOT NULL,
+	edad                 integer  NOT NULL,
+	peso                 integer,
+	estado               char(20)  NOT NULL,
+	id_madre             integer,
+	id_padre             integer,
+	adjuntos             text,
+	nota                 text,
+	chip                 integer,
+	falta                date,
+	halta                time,
 	CONSTRAINT pk_pfvet_mascotas PRIMARY KEY ( id )
  );
  
@@ -126,30 +123,27 @@ CREATE  TABLE pfvet_mascotas (
 	hmodif               	HORA DE LA ULTIMA MODIFICACION SOBRE ALGUNO DE LOS CAMPOS
 	id_operador          	ID DEL OPERADOR QU ELO CARGA / LO MODIFICA
 	estado               
- 
- 
  */
  
-  
  CREATE  TABLE pfvet_articulos ( 
-	id                   integer  NOT NULL  ,
-	nombre               char(65)  NOT NULL  ,
-	rubro                integer  NOT NULL  ,
-	descripcion          text  NOT NULL  ,
-	fotos                text    ,
-	id_vet               integer  NOT NULL  ,
-	precio               decimal  NOT NULL  ,
-	stock                integer  NOT NULL  ,
-	ptoped                integer  NOT NULL  ,
-	ptovta                integer  NOT NULL  ,
-	overstock             char(1)  NOT NULL  ,
-	evento               char(25)    ,
-	falta                date  NOT NULL  ,
-	halta                time  NOT NULL  ,
-	fmodif               date  NOT NULL  ,
-	hmodif               time  NOT NULL  ,
-	id_operador          integer  NOT NULL  ,
-	estado               char(20)    ,
+	id                   integer  NOT NULL,
+	nombre               char(65)  NOT NULL,
+	rubro                integer  NOT NULL,
+	descripcion          text  NOT NULL,
+	fotos                text,
+	id_vet               integer  NOT NULL,
+	precio               decimal  NOT NULL,
+	stock                integer  NOT NULL,
+	ptoped               integer  NOT NULL,
+	ptovta               integer  NOT NULL,
+	overstock            char(1)  NOT NULL,
+	evento               char(25),
+	falta                date  NOT NULL,
+	halta                time  NOT NULL,
+	fmodif               date  NOT NULL,
+	hmodif               time  NOT NULL,
+	id_operador          integer  NOT NULL,
+	estado               char(20),
 	CONSTRAINT pk_pfvet_articulos PRIMARY KEY ( id )
  );
 
@@ -166,18 +160,16 @@ CREATE  TABLE pfvet_mascotas (
 	halta      			HORA DE ALTA 
 */
 
-
 CREATE  TABLE pfvet_veterinarios ( 
-	id                   integer  NOT NULL  ,
-	nombre               char(65)  NOT NULL  ,
-	nota                 text    ,
-	telefono             char(55)    ,
-	email                char(80)    ,
-	falta                date    ,
-	halta                time    ,
+	id                   integer  NOT NULL,
+	nombre               char(65)  NOT NULL,
+	nota                 text,
+	telefono             char(55),
+	email                char(80),
+	falta                date,
+	halta                time,
 	CONSTRAINT pk_pfvet_veterinarios PRIMARY KEY ( id )
  );
- 
  
  
  /* TABLA PRINCIPAL DE VETERINARIAS (NEGOCIOS) AFILIADAS
@@ -201,26 +193,24 @@ CREATE  TABLE pfvet_veterinarios (
 	email               EMAIL 
  */
  
- 
- 
  CREATE  TABLE pfvet_veterinarias ( 
-	id                   integer  NOT NULL  ,
-	razon                char(65)  NOT NULL  ,
-	responsable          char(65)  NOT NULL  ,
-	provincia            char(65)    ,
-	localidad            char(55)  NOT NULL  ,
-	direccion            char(95)  NOT NULL  ,
-	telefono             char(55)  NOT NULL  ,
-	facebook             char(65)    ,
-	instagram            char(65)    ,
-	descripcion          char(65)    ,
-	fotos                text    ,
-	falta                date    ,
-	halta                time    ,
-	estado               char(20)    ,
-	usuario              char(25)    ,
-	password             char(50) NOT NULL  ,
-	email                char(80)  NOT NULL  ,
+	id                   integer  NOT NULL,
+	razon                char(65)  NOT NULL,
+	responsable          char(65)  NOT NULL,
+	provincia            char(65),
+	localidad            char(55)  NOT NULL,
+	direccion            char(95)  NOT NULL,
+	telefono             char(55)  NOT NULL,
+	facebook             char(65),
+	instagram            char(65),
+	descripcion          char(65),
+	fotos                text,
+	falta                date,
+	halta                time,
+	estado               char(20),
+	usuario              char(25),
+	password             char(50) NOT NULL,
+	email                char(80)  NOT NULL,
 	CONSTRAINT pk_pfvet_veterinarias PRIMARY KEY ( id )
  );
  
@@ -239,18 +229,17 @@ CREATE  TABLE pfvet_veterinarios (
  */
    
  CREATE  TABLE pfvet_operadores ( 
-	id                   integer  NOT NULL  ,
-	nombre               char(65)    ,
-	usuario              char(25)  NOT NULL  ,
-	password           char(50)  NOT NULL  ,
-	email                char(80)  NOT NULL  ,
-	rol                  text    ,
-	estado               char(20)  NOT NULL  ,
-	falta                date  NOT NULL  ,
-	halta                time    ,
+	id                   integer  NOT NULL,
+	nombre               char(65),
+	usuario              char(25)  NOT NULL,
+	password             char(50)  NOT NULL,
+	email                char(80)  NOT NULL,
+	rol                  text,
+	estado               char(20)  NOT NULL,
+	falta                date  NOT NULL,
+	halta                time,
 	CONSTRAINT pk_pfvet_operadores PRIMARY KEY ( id )
  );
- 
  
  
  /* TABLA PRINCIPAL DE RELACION RUBRO ARTICULOS 
@@ -259,21 +248,19 @@ CREATE  TABLE pfvet_veterinarios (
 	descripcion          DESCRIPCION DEL RUBRO
 	foto                 FOTOS IDENTIFICATORIAS
 	estado               ESTADO (ACTIVO / INHABILITADO)
-
  */
-   
+
  CREATE  TABLE pfvet_rubros ( 
-	id                   integer  NOT NULL  ,
-	descripcion          char(65)  NOT NULL  ,
-	foto                 char(165)  NOT NULL  ,
-	estado               char(20)    ,
+	id                   integer  NOT NULL,
+	descripcion          char(65)  NOT NULL,
+	foto                 char(165)  NOT NULL,
+	estado               char(20),
 	CONSTRAINT pk_pfvet_rubros PRIMARY KEY ( id )
  );
  
  
  /* TABLA DE CARRITO DE COMPRA PERSISTENTE 
  -----------------------------------------
- 
  	id                   
 	id_cliente  		ID DEL CLIENTE QUE SELECCIONA EL ARTICULO        
 	id_articulo         ID DEL ARTICULO SELECCIONADO
@@ -282,18 +269,17 @@ CREATE  TABLE pfvet_veterinarios (
 	falta               FECHA DE ALTA
 	halta               HORA DE ALTA
 	fvto   				FECHA DE VENCIMIENTO DE ESTE REGISTRO 
- 
  */
  
  CREATE  TABLE pfvet_carritos ( 
-	id                   integer  NOT NULL  ,
-	id_cliente           integer  NOT NULL  ,
-	id_articulo          integer  NOT NULL  ,
-	cantidad			 integer  NOT NULL  ,
-	comfav               char(1)    ,
-	falta                date    ,
-	halta                time    ,
-	fvto                 date    ,
+	id                   integer  NOT NULL,
+	id_cliente           integer  NOT NULL,
+	id_articulo          integer  NOT NULL,
+	cantidad			 integer  NOT NULL,
+	comfav               char(1),
+	falta                date,
+	halta                time,
+	fvto                 date,
 	CONSTRAINT pk_pfvet_carritos PRIMARY KEY ( id )
  );
  
@@ -309,23 +295,22 @@ CREATE  TABLE pfvet_veterinarios (
 	faccion          FECHA EN LA QUE SE INTERVINO A LA MASCOTA
 	halta            HORA DE ALTA DE ESTE REGISTRO
 	adjuntos         ARCHIVOS ADJUNTOS
- 
- 
  */
   
  CREATE  TABLE pfvet_historia_clinicas ( 
-	id                   integer  NOT NULL  ,
-	id_mascota           integer  NOT NULL  ,
-	id_veterinario       integer    ,
-	nomenclador          char(65)  NOT NULL  ,
-	descripcion          text  NOT NULL  ,
-	falta                date    ,
-	faccion              date  NOT NULL  ,
-	halta                time    ,
-	adjuntos             text    ,
+	id                   integer  NOT NULL,
+	id_mascota           integer  NOT NULL,
+	id_veterinario       integer,
+	nomenclador          char(65)  NOT NULL,
+	descripcion          text  NOT NULL,
+	falta                date,
+	faccion              date  NOT NULL,
+	halta                time,
+	adjuntos             text,
 	CONSTRAINT pk_pfvet_historia_clinicas PRIMARY KEY ( id )
  );
  
+
  /* TABLA PRINCIPAL CON HORARIOS DE ATENCION DE URGENCIA DE VETERINARIOS AFILIADOS
  ---------------------------------------------------------------------------------
 	id 
@@ -334,20 +319,17 @@ CREATE  TABLE pfvet_veterinarios (
 	descripcion     DETALLE DE HORARIOS DE ATENCION Y FORMA
 	falta           FECHA DE ALTA DE ESTE REGISTRO
 	halta           HORA DE ALTA DE ESTE REGISTRO
- 
- 
  */
    
  CREATE  TABLE pfvet_horarios ( 
-	id                   integer  NOT NULL  ,
-	id_veterinario       integer    ,
-	fechaguardia         date  NOT NULL  ,
-	descripcion          text  NOT NULL  ,
-	falta                date    ,
-	halta                time    ,
+	id                   integer  NOT NULL,
+	id_veterinario       integer,
+	fechaguardia         date  NOT NULL,
+	descripcion          text  NOT NULL,
+	falta                date,
+	halta                time,
 	CONSTRAINT pk_pfvet_horarios PRIMARY KEY ( id )
  );
- 
  
  
  /* TABLA PRINCIPLA DE REGISTRO DE OPERACIONES DEL ECOMMERCE
@@ -368,19 +350,19 @@ CREATE  TABLE pfvet_veterinarios (
  */
   
  CREATE  TABLE pfvet_commerces ( 
-	id                   integer  NOT NULL  ,
-	id_cliente           integer  NOT NULL  ,
-	id_articulo          integer  NOT NULL  ,
-	tipo		         char(25)  NOT NULL  ,
-	detalle		          text  NOT NULL  ,
-	fecha                date  NOT NULL  ,
-	comprobante          integer  NOT NULL  ,
-	importe				 decimal  NOT NULL  ,	
-	mediopago	         char(65)  NOT NULL  ,
-	cuota		       	integer  NOT NULL  ,
-	decuota				 integer  NOT NULL  ,
-	falta                date    ,
-	halta                time    ,
+	id                   integer  NOT NULL,
+	id_cliente           integer  NOT NULL,
+	id_articulo          integer  NOT NULL,
+	tipo		         char(25)  NOT NULL,
+	detalle		         text  NOT NULL,
+	fecha                date  NOT NULL,
+	comprobante          integer  NOT NULL,
+	importe				 decimal  NOT NULL,	
+	mediopago	         char(65)  NOT NULL,
+	cuota		       	 integer  NOT NULL,
+	decuota				 integer  NOT NULL,
+	falta                date,
+	halta                time,
 	CONSTRAINT pk_pfvet_commerces PRIMARY KEY ( id )
  );
  
@@ -399,14 +381,14 @@ CREATE  TABLE pfvet_veterinarios (
  */
   
  CREATE  TABLE pfvet_reviews ( 
-	id                   integer  NOT NULL  ,
-	id_cliente           integer  NOT NULL  ,
-	destino           char(25)  NOT NULL  ,
-	titulo          char(85)  NOT NULL  ,
-	nota			 text  NOT NULL  ,
-	calificacion	integer  NOT NULL  ,
-	estado			char(25)  NOT NULL  ,
-	falta                date    ,
-	halta                time    ,
+	id                   integer  NOT NULL,
+	id_cliente           integer  NOT NULL,
+	destino              char(25)  NOT NULL,
+	titulo               char(85)  NOT NULL,
+	nota			     text  NOT NULL,
+	calificacion	     integer  NOT NULL,
+	estado			     char(25)  NOT NULL,
+	falta                date,
+	halta                time,
 	CONSTRAINT pk_pfvet_reviews PRIMARY KEY ( id )
  );
