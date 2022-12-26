@@ -1,17 +1,19 @@
 import * as dotenv from 'dotenv';
 import { Sequelize } from 'sequelize';
+import type { SequelizeProduction } from '../environment';
 
 dotenv.config({ path: '.env.development' });
 
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, NODE_ENV } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, NODE_ENV, DB_PORT } =
+	process.env;
 
-const sequelize =
+const sequelize: Sequelize | SequelizeProduction =
 	NODE_ENV === 'production'
-		? new Sequelize({
+		? (new Sequelize({
 				database: DB_NAME ?? 'buddycare',
 				dialect: 'postgres',
 				host: DB_HOST ?? 'localhost',
-				port: 5432,
+				port: DB_PORT ?? 5432,
 				username: DB_USER ?? 'postgres',
 				password: DB_PASSWORD ?? '',
 				pool: {
@@ -27,7 +29,7 @@ const sequelize =
 					keepAlive: true,
 				},
 				ssl: true,
-		  })
+		  }) as SequelizeProduction)
 		: new Sequelize(
 				'postgres://djqjleey:x_ZBCp-Ew1Z8G3CCxyvX2cXNEGOtfPBZ@motty.db.elephantsql.com/djqjleey',
 				{
