@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Urgencias from '../components/Urgencias';
+import Urgencias from '../components/Testimonio';
 
 function Home(): ReactElement {
 	return (
