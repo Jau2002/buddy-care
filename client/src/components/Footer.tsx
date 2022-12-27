@@ -3,43 +3,46 @@ import { ReactElement } from 'react';
 function Footer(): ReactElement {
 	return (
 		<div className='footer-div'>
-		  
 			<div className='footer-div--div'>
-				<div>
+				<a
+					href='fabianperaltasfco@gmail.com'
+					target='_blank'
+					rel='noreferrer'
+					className='navbar bg-dark'
+				>
 					<img
-						src='/img/face_tb.png'
-						width='60'
-						height='60'
+						src='/img/envelope-at-fill.svg'
+						alt='Email'
+						loading='lazy'
+						className='navbar-brand'
 					/>
-				</div>
-				<div>
+				</a>
+				<a
+					href='https://www.linkedin.com/in/jaumesuarez/'
+					target='_blank'
+					rel='noreferrer'
+					className='navbar bg-dark'
+				>
 					<img
-						src='/img/instagram_white.png'
-						width='60'
-						height='60'
+						src='/img/linkedin.svg'
+						alt='LinkedIn'
+						loading='lazy'
+						className='navbar-brand'
 					/>
-				</div>
-				<div>
+				</a>
+				<a
+					href='#'
+					target='_blank'
+					rel='noreferrer'
+					className='navbar bg-dark'
+				>
 					<img
-						src='/img/email_tb.png'
-						width='60'
-						height='60'
+						src='/img/whatsapp.svg'
+						alt='WhatsApp'
+						loading='lazy'
+						className='navbar-brand'
 					/>
-				</div>
-				<div>
-					<img
-						src='/img/wap_tb.png'
-						width='60'
-						height='60'
-					/>
-				</div>
-				<div>
-					<img
-						src='/img/telegram_tg.png'
-						width='60'
-						height='60'
-					/>
-				</div>
+				</a>
 			</div>
 
 			<div>

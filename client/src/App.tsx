@@ -10,6 +10,7 @@ function App(): ReactElement {
 	const router = createBrowserRouter([
 		{
 			path: '/',
+			index: true,
 			element: <Home />,
 			errorElement: <NotFound />,
 		},
