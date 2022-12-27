@@ -1,4 +1,4 @@
-import { Options } from 'sequelize';
+// import { Options } from 'sequelize';
 
 declare global {
 	namespace NodeJS {
@@ -14,5 +14,31 @@ declare global {
 }
 
 export interface SequelizeProduction {
-	options?: Options;
+	uri: string;
+	options: Options;
+	database?: string;
+	dialect?: string;
+	host?: string;
+	port?: number;
+	username?: string;
+	password?: string;
+	Pool: Pool;
+	dialectOptions: DialectOptions;
+	ssl: boolean;
+}
+
+interface Pool {
+	max: number;
+	min: number;
+	idle: number;
+}
+
+interface DialectOptions {
+	ssl: Ssl;
+	keepAlive: boolean;
+}
+
+interface Ssl {
+	require: boolean;
+	rejectUnauthorized: boolean;
 }

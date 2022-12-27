@@ -20,10 +20,11 @@ function authenticating(): Auth {
 			myQuery: `SELECT email, password, apellido, nombres, id FROM pfvet_clientes WHERE TRIM(email)='${email?.trim()}' AND TRIM(password)='${password?.trim()}' LIMIT 1;`,
 		};
 		dispatch(getUser(query));
+		console.log(logger);
 		logger.length
 			? setTimeout(() => {
 					navigate('/');
-			  }, 3000)
+			  }, 2000)
 			: navigate('/');
 	};
 

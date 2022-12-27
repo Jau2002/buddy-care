@@ -22,7 +22,7 @@ function Editable({ type, placeholder, name, display }: Content): ReactElement {
 				<ErrorMessage
 					name={name}
 					component='span'
-					className='alert-link'
+					className='alert-link mb-0'
 				/>
 			</div>
 		</section>

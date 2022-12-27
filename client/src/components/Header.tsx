@@ -1,8 +1,13 @@
 import { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
+import { useAppSelector } from '../app/hook';
+import { selectLogIn } from '../features/logger/logInSlice';
+import { LogInAction } from '../features/reducers';
 import { navigation } from '../utils/routes';
 import Nav from './Nav';
 
 function Header(): ReactElement {
+	const logger: LogInAction[] = useAppSelector(selectLogIn);
 	return (
 		<header className='navbar navbar-expand-lg navbar-light bg-dark'>
 			<div className='container-fluid'>
@@ -29,6 +34,27 @@ function Header(): ReactElement {
 							loading='lazy'
 						/>
 					</a>
+					{logger?.length ? (
+						<h2>
+							{logger.map(
+								(
+									{ nombres, apellido }: LogInAction,
+									i: number
+								): ReactElement => (
+									<div key={i}>
+										<h3>{`${nombres} ${apellido}`}</h3>
+									</div>
+								)
+							)}
+						</h2>
+					) : (
+						<Link
+							to='/SignIn/'
+							className='navbar-brand'
+						>
+							<span className='nav-link text-white'>Registrarse</span>
+						</Link>
+					)}
 				</div>
 			</div>
 		</header>

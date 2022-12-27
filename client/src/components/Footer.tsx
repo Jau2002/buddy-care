@@ -5,7 +5,7 @@ function Footer(): ReactElement {
 		<div className='footer-div'>
 			<div className='footer-div--div'>
 				<a
-					href='fabianperaltasfco@gmail.com'
+					href='mailto:fabianperaltasfco@gmail.com'
 					target='_blank'
 					rel='noreferrer'
 					className='navbar bg-dark'
@@ -31,7 +31,7 @@ function Footer(): ReactElement {
 					/>
 				</a>
 				<a
-					href='#'
+					href='https://api.whatsapp.com/send/?phone=573004071981'
 					target='_blank'
 					rel='noreferrer'
 					className='navbar bg-dark'
