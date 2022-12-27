@@ -5,7 +5,7 @@ import Nav from './Nav';
 function Header(): ReactElement {
 	return (
 		<>
-			<Nav link={navigation} />
+			<Nav link={navigation}/>
 		</>
 	);
 }
