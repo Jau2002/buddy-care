@@ -7,7 +7,7 @@ function Editable({ type, placeholder, name, display }: Content): ReactElement {
 		<section className='form-outline mb-4'>
 			<label
 				htmlFor={type}
-				className='form-label'
+				className='form-label form-section--label'
 			>
 				{display}
 			</label>

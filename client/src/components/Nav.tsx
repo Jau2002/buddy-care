@@ -17,7 +17,7 @@ function Nav({ link }: LinkRoutes): ReactElement {
 							to={url}
 							className='navbar-brand'
 						>
-							<samp className='nav-link text-white'>{route}</samp>
+							<samp className='nav-link text-white nav'>{route}</samp>
 						</Link>
 					)
 				)}

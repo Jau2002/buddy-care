@@ -52,7 +52,7 @@ function Header(): ReactElement {
 							to='/SignIn/'
 							className='navbar-brand'
 						>
-							<span className='nav-link text-white'>Registrarse</span>
+							<span className='nav-link text-white nav'>Registrarse</span>
 						</Link>
 					)}
 				</div>

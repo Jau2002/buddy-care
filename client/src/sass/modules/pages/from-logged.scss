@@ -1,0 +1,25 @@
+.form-article {
+	background: $faux-dark-rose-dust;
+
+	&--link {
+		color: $faux-dark-slate-blue;
+	}
+
+	&--img {
+		border-radius: 1rem 0 0 1rem;
+	}
+
+	&--div {
+		border-radius: 1rem;
+	}
+
+	&--button {
+		position: absolute;
+		right: 3rem;
+		bottom: 3rem;
+	}
+
+	&--p {
+		font: 500 1em $open-sans;
+	}
+}

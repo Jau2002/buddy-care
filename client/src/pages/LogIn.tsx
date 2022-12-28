@@ -14,7 +14,7 @@ function LogIn(): ReactElement {
 								<div className='row g-0'>
 									<div className='col-md-6 col-lg-5 d-none d-md-block'>
 										<img
-											src='/img/vets.jpg'
+											src='/img/vets.webp'
 											alt='login form'
 											className='img-fluid form-article--img border-1px'
 											loading='lazy'
@@ -28,16 +28,16 @@ function LogIn(): ReactElement {
 												title='Iniciar sesión en su cuenta'
 											/>
 											<Link
-												className='small text-muted'
+												className='small text-muted form-article--p'
 												to='/SignIn/user'
 											>
 												¿Se te olvidó tu contraseña?
 											</Link>
-											<p className='mb-5 pb-lg-2 form-article--link'>
+											<p className='mb-5 pb-lg-2 form-article--link form-article--p'>
 												¿No tienes una cuenta?
 												<Link
 													to='/SignUp'
-													className='form-article--link'
+													className='form-article--link form-article--p'
 												>
 													{' '}
 													Registrarse aquí
@@ -47,7 +47,7 @@ function LogIn(): ReactElement {
 														to='/'
 														className='small text-muted'
 													>
-														<button className='btn btn-outline-dark'>
+														<button className='btn btn-outline-dark form-article--p'>
 															Pagina principal
 														</button>
 													</Link>

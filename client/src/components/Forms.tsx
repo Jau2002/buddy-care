@@ -15,7 +15,9 @@ function Forms({ form, submit, title }: FormsAssociation): ReactElement {
 			onSubmit={handleSubmit}
 		>
 			<Form>
-				<h5 className='fw-normal mb-3 pb-3 form-section--h5'>{title}</h5>
+				<h5 className='fw-normal mb-3 pb-3 form-section--h5 form-section--h5'>
+					{title}
+				</h5>
 				{form.map(
 					(
 						{ name, placeholder, type, display }: Attributes,
@@ -33,7 +35,7 @@ function Forms({ form, submit, title }: FormsAssociation): ReactElement {
 				<div className='pt-1 mb-4'>
 					<button
 						type='submit'
-						className='btn btn-dark btn-lg btn-block'
+						className='btn btn-dark btn-lg btn-block form-section--label'
 					>
 						{submit}
 					</button>

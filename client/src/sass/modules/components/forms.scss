@@ -5,6 +5,14 @@
 	}
 
 	&--input {
+		font: 900 1em $lato;
+
+		&::placeholder {
+			font: 500 italic 1em $open-sans;
+		}
+	}
+
+	&--label {
 		font: 500 1em $open-sans;
 	}
 
