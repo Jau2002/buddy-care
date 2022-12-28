@@ -1,13 +1,12 @@
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
-import { useAppSelector } from '../app/hook';
-import { selectLogIn } from '../features/logger/logInSlice';
 import { LogInAction } from '../features/reducers';
+import useCleaning from '../hooks/useCleaning';
 import { navigation } from '../utils/routes';
 import Nav from './Nav';
 
 function Header(): ReactElement {
-	const logger: LogInAction[] = useAppSelector(selectLogIn);
+	const { logger, handleClick } = useCleaning();
 	return (
 		<header className='navbar navbar-expand-lg navbar-light bg-dark'>
 			<div className='container-fluid'>
@@ -35,18 +34,23 @@ function Header(): ReactElement {
 						/>
 					</a>
 					{logger?.length ? (
-						<h2>
-							{logger.map(
-								(
-									{ nombres, apellido }: LogInAction,
-									i: number
-								): ReactElement => (
-									<div key={i}>
-										<h3>{`${nombres} ${apellido}`}</h3>
-									</div>
-								)
-							)}
-						</h2>
+						logger.map(
+							({ nombres, apellido }: LogInAction, i: number): ReactElement => (
+								<div
+									key={i}
+									className='d-flex align-items-center'
+								>
+									<button
+										type='button'
+										onClick={handleClick}
+										className='btn btn-outline-light nav--button'
+									>
+										Cerrar Sección
+									</button>
+									<h3 className='nav--h3'>{nombres}</h3>
+								</div>
+							)
+						)
 					) : (
 						<Link
 							to='/SignIn/'

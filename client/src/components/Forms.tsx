@@ -1,13 +1,13 @@
 import { Form, Formik } from 'formik';
 import { ReactElement } from 'react';
 import Editable from '../components/Editable';
-import authenticating from '../hooks/authenticating';
+import useAuthenticated from '../hooks/useAuthenticated';
 import type { Attributes } from '../utils/utils';
 import validator from '../utils/validator';
 import type { FormsAssociation, Type } from './components';
 
 function Forms({ form, submit, title }: FormsAssociation): ReactElement {
-	const { defaultInputs, handleSubmit, pathname } = authenticating();
+	const { defaultInputs, handleSubmit, pathname } = useAuthenticated();
 	return (
 		<Formik
 			initialValues={defaultInputs}

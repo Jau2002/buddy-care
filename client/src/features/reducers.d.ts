@@ -1,3 +1,4 @@
+import { Dispatch } from '@reduxjs/toolkit';
 import { RootState } from '../app/store';
 
 export interface LogInState {
@@ -12,7 +13,7 @@ interface LogInAction {
 	id?: number;
 }
 
-type GetUserAction = (dispatch) => Promise<DispatchUser>;
+type GetUserAction = (dispatch: Dispatch) => Promise<DispatchUser>;
 
 interface DispatchUser {
 	payload?: LogInAction;
@@ -20,3 +21,9 @@ interface DispatchUser {
 }
 
 type selectorLogger = (state: RootState) => LogInAction[];
+
+interface Clear {
+	log: never[];
+}
+
+type clearUserAction = (dispatch: Dispatch) => any;

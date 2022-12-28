@@ -1,9 +1,10 @@
+import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
-import type { DispatchUser, GetUserAction } from '../reducers';
-import { getUserIsLogIn } from './logInSlice';
+import type { clearUserAction, DispatchUser, GetUserAction } from '../reducers';
+import { clearUserIfLogIn, getUserIsLogIn } from './logInSlice';
 
 export function getUser(query: object): GetUserAction {
-	return async (dispatch): Promise<DispatchUser> => {
+	return async (dispatch: Dispatch): Promise<DispatchUser> => {
 		const { data } = await axios.post('/query', query);
 		try {
 			return dispatch(getUserIsLogIn(data));
@@ -11,4 +12,8 @@ export function getUser(query: object): GetUserAction {
 			throw new Error((err as Error).message);
 		}
 	};
+}
+
+export function clearUser(): clearUserAction {
+	return (dispatch: Dispatch): DispatchUser => dispatch(clearUserIfLogIn());
 }

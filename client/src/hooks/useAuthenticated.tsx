@@ -5,10 +5,10 @@ import { getUser } from '../features/logger/logInActions';
 import { selectLogIn } from '../features/logger/logInSlice';
 import { LogInAction } from '../features/reducers';
 import prevSubmit from '../utils/prevSubmit';
-import type { Auth, Location, Submit } from './hook';
+import type { Auth, dispatcherUser, Location, Submit } from './hook';
 
-function authenticating(): Auth {
-	const dispatch = useAppDispatch();
+function useAuthenticated(): Auth {
+	const dispatch: dispatcherUser = useAppDispatch();
 
 	const { pathname } = useLocation() as Location;
 
@@ -33,4 +33,4 @@ function authenticating(): Auth {
 	return { handleSubmit, defaultInputs, pathname };
 }
 
-export default authenticating;
+export default useAuthenticated;
