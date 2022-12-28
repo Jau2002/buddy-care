@@ -14,7 +14,7 @@ function Header(): ReactElement {
 				<div className='collapse navbar-collapse'>
 					<div className='navbar-brand mt-2 mt-lg-0'>
 						<img
-							src='/img/logo-blanco.png'
+							src='/img/logo-white.png'
 							width='40px'
 							height='30px'
 							alt='Logo'

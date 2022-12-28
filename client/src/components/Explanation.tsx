@@ -6,8 +6,9 @@ function Explanation(): ReactElement {
 			<div className='explanation-div'>
 				<img
 					className='explanation-div--img'
-					src='/img/testi_foto1.jpg'
+					src='/img/dog-and-cat.jpg'
 					alt='Perro y gato'
+					loading='lazy'
 				/>
 				<div>
 					<p className='explanation-div--p'>
@@ -22,8 +23,9 @@ function Explanation(): ReactElement {
 			<div className='explanation-div'>
 				<img
 					className='explanation-div--img'
-					src='/img/testi_foto2.jpg'
+					src='/img/heart-dog.jpg'
 					alt='Perro corazón'
+					loading='lazy'
 				/>
 				<div>
 					<p className='explanation-div--p'>
@@ -37,8 +39,9 @@ function Explanation(): ReactElement {
 			<div className='explanation-div'>
 				<img
 					className='explanation-div--img'
-					src='/img/testi_foto3.jpg'
+					src='/img/family-dog.jpg'
 					alt='Perro familia'
+					loading='lazy'
 				/>
 				<div>
 					<p className='explanation-div--p'>

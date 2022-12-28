@@ -14,9 +14,10 @@ function LogIn(): ReactElement {
 								<div className='row g-0'>
 									<div className='col-md-6 col-lg-5 d-none d-md-block'>
 										<img
-											src='/img/veterinaria.jpg'
+											src='/img/vets.jpg'
 											alt='login form'
 											className='img-fluid form-article--img border-1px'
+											loading='lazy'
 										/>
 									</div>
 									<div className='col-md-6 col-lg-7 d-flex align-items-center'>
@@ -38,6 +39,7 @@ function LogIn(): ReactElement {
 													to='/SignUp'
 													className='form-article--link'
 												>
+													{' '}
 													Registrarse aquí
 												</Link>
 												<div className='d-grid gap-2 d-md-flex justify-content-md-end form-article--button'>

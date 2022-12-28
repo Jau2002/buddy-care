@@ -24,7 +24,7 @@ function Footer(): ReactElement {
 					className='navbar bg-dark'
 				>
 					<img
-						src='/img/linkedin.svg'
+						src='/img/linked-in.svg'
 						alt='LinkedIn'
 						loading='lazy'
 						className='navbar-brand'
@@ -37,7 +37,7 @@ function Footer(): ReactElement {
 					className='navbar bg-dark'
 				>
 					<img
-						src='/img/whatsapp.svg'
+						src='/img/whats-app.svg'
 						alt='WhatsApp'
 						loading='lazy'
 						className='navbar-brand'
