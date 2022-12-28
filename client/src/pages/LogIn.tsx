@@ -40,6 +40,16 @@ function LogIn(): ReactElement {
 												>
 													Registrarse aquí
 												</Link>
+												<div className='d-grid gap-2 d-md-flex justify-content-md-end form-article--button'>
+													<Link
+														to='/'
+														className='small text-muted'
+													>
+														<button className='btn btn-outline-dark'>
+															Pagina principal
+														</button>
+													</Link>
+												</div>
 											</p>
 										</div>
 									</div>

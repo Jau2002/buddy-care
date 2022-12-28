@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
 import Forms from '../components/Forms';
 import { email } from '../utils/form';
 
@@ -25,6 +26,16 @@ function UserValidate(): ReactElement {
 											title='Verificar correo electrónico'
 										/>
 									</div>
+								</div>
+								<div className='d-grid gap-2 d-md-flex justify-content-md-end form-article--button'>
+									<Link
+										to='/'
+										className='small text-muted'
+									>
+										<button className='btn btn-outline-dark'>
+											Pagina principal
+										</button>
+									</Link>
 								</div>
 							</div>
 						</div>

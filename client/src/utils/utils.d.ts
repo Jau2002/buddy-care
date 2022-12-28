@@ -9,3 +9,7 @@ interface Attributes {
 	name: string;
 	display: string;
 }
+
+interface Query {
+	myQuery: string;
+}

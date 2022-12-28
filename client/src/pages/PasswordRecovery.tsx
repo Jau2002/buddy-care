@@ -1,17 +1,9 @@
 import { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
 import Forms from '../components/Forms';
 import { passwords } from '../utils/form';
-import { useNavigate } from 'react-router-dom';
 
 function PasswordRecovery(): ReactElement {
-
-	const navigate = useNavigate()
-
-	const routeChange = () =>{ 
-		let path = '/'; 
-		 navigate(path);
-	  }
-
 	return (
 		<article className='vh-100 form-article'>
 			<div className='container py-5 h-100'>
@@ -35,7 +27,16 @@ function PasswordRecovery(): ReactElement {
 										/>
 									</div>
 								</div>
-									<button onClick={()=> routeChange()}>Home</button>
+								<div className='d-grid gap-2 d-md-flex justify-content-md-end form-article--button'>
+									<Link
+										to='/'
+										className='small text-muted'
+									>
+										<button className='btn btn-outline-dark'>
+											Pagina principal
+										</button>
+									</Link>
+								</div>
 							</div>
 						</div>
 					</div>
