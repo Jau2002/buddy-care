@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-const CardPets = ({...props}): ReactElement => {
+const CardPets = ({ ...props }): ReactElement => {
 	return (
 		<>
 			<div>
@@ -13,7 +13,7 @@ const CardPets = ({...props}): ReactElement => {
 			<div>
 				<p>{props.nombre}</p>
 				<p>{props.raza}</p>
-        <p>{props.edad}</p>
+				<p>{props.edad}</p>
 			</div>
 		</>
 	);

@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
+import Explanation from '../components/Explanation';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Urgencias from '../components/Testimonio';
 
 function Home(): ReactElement {
 	return (
@@ -10,7 +10,7 @@ function Home(): ReactElement {
 				<Header />
 			</header>
 			<main className='main'>
-				<Urgencias />
+				<Explanation />
 			</main>
 			<footer className='footer'>
 				<Footer />

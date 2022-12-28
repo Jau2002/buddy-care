@@ -1,34 +1,30 @@
 .footer-div {
-	background: $var;
-    min-height: 10vh;
+	background: $dark-charcoal;
+	min-height: 10vh;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
-	
+
 	&--div {
-		background-color: $var;
-		display: -ms-flex;
-		display: -webkit-flex;
+		background-color: $dark-charcoal;
 		display: flex;
 	}
 
 	& > div {
-        background-color: $var;
-	    width: 50%;
-	    padding: 10px;
+		background-color: $dark-charcoal;
+		width: 50%;
+		padding: 10px;
 	}
 
-   & > div:first-child {
-	   margin-right: 20px;
-   }
+	& > div:first-child {
+		margin-right: 20px;
+	}
 
-   &--p{
-	   font-weight: 600;
-	   font-family: 'Open Sans', sans-serif;
-	   border-radius: 5px;
-	   color:white;
-	   font-size: 20px;
-	   text-shadow: none;
-	   text-align: center;
-   }
+	&--p {
+		font: 500 1.2em $open-sans;
+		border-radius: 5px;
+		color: $white;
+		text-shadow: none;
+		text-align: center;
+	}
 }
