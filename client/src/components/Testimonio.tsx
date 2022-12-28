@@ -31,7 +31,7 @@ function Testimonio(): ReactElement {
 						<p className='textotestimonio'>
 							Como cliente suscripto también tendrá acceso a un servicio de
 							URGENCIAS , donde veterinarios del staff publicaran sus horarios
-							de atención para solucionar esta el acceso a un exclusivo shop de
+							de atención para solucionar está el acceso a un exclusivo shop de
 							artículos de veterinaria con inmejorables promociones
 						</p>
 					</div>

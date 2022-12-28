@@ -1,29 +1,28 @@
 .globalperros{
-    background-color: white;
-     background-size: cover;
+   background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
-   width: 100vw;
-   height: 150vh;
  }
  
  .contenedortestimonio{
- 
-     width: 1170;
-     height: 368;
+     width: 1000;
+     height: 150px;
      margin: 10px 10px 50px;
      margin-top: 20px;
      display: flex;
      align-items: center;
      justify-content: center;
-     background-color: #ffffff;
+     background-color: $faux-dark-rose-dust;
      box-shadow: 0 3px 13px 1px rgb(0 0 0 /9%);
- 
+     border: 0.5px solid transparent;
+     border-radius: 5px;
  }
  
  .imagentestimonio{
      height: 100%;
-     width: auto;
+     width: 30%;
+     border: 0.5px solid transparent;
+     border-radius: 5px;
  }
  
  .contenedortextotestimonio{
@@ -33,8 +32,6 @@
      padding: 40px;
      font-family: Lato, sans-serif;
      line-height: 1.5rem;
- 
- 
  }
  
  .nombretestimonio{
@@ -47,6 +44,7 @@
      margin-top: 15px;
      padding-bottom: 30px;
  }
+ 
  .textotestimonio{
      font-weight: 600;
      font-family: 'Open Sans', sans-serif;

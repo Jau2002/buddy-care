@@ -14,12 +14,12 @@
 
 	& > div {
         background-color: $var;
-	width: 50%;
-	padding: 10px;
+	    width: 50%;
+	    padding: 10px;
 	}
 
    & > div:first-child {
-	  margin-right: 20px;
+	   margin-right: 20px;
    }
 
    &--p{
