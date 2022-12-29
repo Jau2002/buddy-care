@@ -7,6 +7,7 @@ import Nav from './Nav';
 
 function Header(): ReactElement {
 	const { logger, handleClick } = useCleaning();
+	console.log(localStorage.getItem('nombres') ?? logger?.length);
 	return (
 		<header className='navbar navbar-expand-lg navbar-light bg-dark'>
 			<div className='container-fluid'>
@@ -33,24 +34,30 @@ function Header(): ReactElement {
 							loading='lazy'
 						/>
 					</a>
-					{logger?.length ? (
-						logger.map(
-							({ nombres, apellido }: LogInAction, i: number): ReactElement => (
-								<div
-									key={i}
-									className='d-flex align-items-center'
-								>
-									<button
-										type='button'
-										onClick={handleClick}
-										className='btn btn-outline-light nav--button'
-									>
-										Cerrar Sección
-									</button>
-									<h3 className='nav--h3'>{nombres}</h3>
-								</div>
-							)
-						)
+					{localStorage.getItem('nombres') ?? logger?.length ? (
+						<div className='d-flex align-items-center'>
+							<button
+								type='button'
+								onClick={handleClick}
+								className='btn btn-outline-light nav--button'
+							>
+								Cerrar Sección
+							</button>
+							{logger.length ? (
+								logger.map(
+									({ nombres }: LogInAction, i: number): ReactElement => (
+										<h3
+											className='nav--h3'
+											key={i}
+										>
+											{nombres}
+										</h3>
+									)
+								)
+							) : (
+								<h3 className='nav--h3'>{localStorage.getItem('nombres')}</h3>
+							)}
+						</div>
 					) : (
 						<Link
 							to='/SignIn/'

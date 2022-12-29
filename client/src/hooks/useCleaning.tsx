@@ -9,7 +9,11 @@ function useCleaning(): Cleaning {
 
 	const logger: LogInAction[] = useAppSelector(selectLogIn);
 
-	const handleClick = (): any => dispatch(clearUser());
+	const handleClick = (): any => {
+		localStorage.removeItem('email');
+		localStorage.removeItem('nombres');
+		dispatch(clearUser());
+	};
 
 	return { logger, handleClick };
 }

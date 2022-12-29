@@ -6,11 +6,11 @@ export interface LogInState {
 }
 
 interface LogInAction {
-	username?: string;
-	password?: string;
-	apellido?: string;
-	nombres?: string;
-	id?: number;
+	email: string;
+	password: string;
+	apellido: string;
+	nombres: string;
+	id: number;
 }
 
 type GetUserAction = (dispatch: Dispatch) => Promise<DispatchUser>;

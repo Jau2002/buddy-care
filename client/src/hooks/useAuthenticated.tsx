@@ -17,10 +17,13 @@ function useAuthenticated(): Auth {
 	const navigate: NavigateFunction = useNavigate();
 
 	const handleSubmit: Submit = (values: Type) => {
+		dispatch(getUser(prevSubmit(values)));
 		logger.length
-			? setTimeout(() => {
-					navigate('/');
-			  }, 2000)
+			? logger.map(({ nombres, email }: LogInAction) => {
+					localStorage.setItem('email', email);
+					localStorage.setItem('nombres', nombres);
+					return navigate('/');
+			  })
 			: dispatch(getUser(prevSubmit(values)));
 	};
 
