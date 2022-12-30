@@ -7,7 +7,7 @@ export const navigation: Navigate[] = [
 	},
 	{
 		route: 'Mascotas',
-		url: '/history',
+		url: '/pets',
 	},
 	{
 		route: 'Servicios',

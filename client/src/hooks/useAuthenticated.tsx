@@ -6,8 +6,11 @@ import { selectLogIn } from '../features/logger/logInSlice';
 import { LogInAction } from '../features/reducers';
 import prevSubmit from '../utils/prevSubmit';
 import type { Auth, dispatcherUser, Location, Submit } from './hook';
+import useCleaning from './useCleaning';
 
 function useAuthenticated(): Auth {
+	const { getIsALogged } = useCleaning();
+
 	const dispatch: dispatcherUser = useAppDispatch();
 
 	const { pathname } = useLocation() as Location;
@@ -16,15 +19,16 @@ function useAuthenticated(): Auth {
 
 	const navigate: NavigateFunction = useNavigate();
 
-	const handleSubmit: Submit = (values: Type) => {
-		dispatch(getUser(prevSubmit(values)));
-		logger.length
-			? logger.map(({ nombres, email }: LogInAction) => {
-					localStorage.setItem('email', email);
+	const handleSubmit: Submit = ({ email, password }: Type) => {
+		getIsALogged()
+			? logger.map(({ password, email, id, nombres }: LogInAction) => {
 					localStorage.setItem('nombres', nombres);
+					localStorage.setItem('id', id.toString());
+					localStorage.setItem('email', email);
+					localStorage.setItem('password', password);
 					return navigate('/');
 			  })
-			: dispatch(getUser(prevSubmit(values)));
+			: dispatch(getUser(prevSubmit({ email, password })));
 	};
 
 	const defaultInputs: Type = {

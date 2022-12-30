@@ -1,22 +1,29 @@
 import { ReactElement } from 'react';
+import { petAction } from '../features/reducers';
+import useCleaning from '../hooks/useCleaning';
+import useMedicalPets from '../hooks/useMedicalPets';
 
-const CardPets = ({ ...props }): ReactElement => {
+function CardPets(): ReactElement {
+	const { allUserPets } = useMedicalPets();
+	const { getIsALogged } = useCleaning();
+	console.log(allUserPets);
 	return (
 		<>
-			<div>
-				<img
-					src={props.adjunto}
-					alt='Pets_image'
-				/>
-			</div>
-
-			<div>
-				<p>{props.nombre}</p>
-				<p>{props.raza}</p>
-				<p>{props.edad}</p>
-			</div>
+			{getIsALogged() &&
+				allUserPets?.map(
+					({ id, adjunto, chip, nombre, raza }: petAction): ReactElement => (
+						<div key={id}>
+							<img
+								src={adjunto}
+								alt={raza}
+							/>
+							<h2>{nombre}</h2>
+							<span>{chip}</span>
+						</div>
+					)
+				)}
 		</>
 	);
-};
+}
 
 export default CardPets;
