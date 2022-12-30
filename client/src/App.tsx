@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import NotFound from './pages/NotFound';
 import PasswordRecovery from './pages/PasswordRecovery';
+import SingUp from './pages/SingUp';
 import UserValidate from './pages/UserValidate';
 
 function App(): ReactElement {
@@ -16,20 +17,24 @@ function App(): ReactElement {
 			errorElement: <NotFound />,
 		},
 		{
-			path: '/SignIn',
+			path: '/signIn',
 			element: <LogIn />,
 		},
 		{
-			path: '/SignIn/user',
+			path: '/signIn/user',
 			element: <UserValidate />,
 		},
 		{
-			path: '/SignIn/password',
+			path: '/signIn/password',
 			element: <PasswordRecovery />,
 		},
 		{
 			path: '/pets',
 			element: <CardPets />,
+		},
+		{
+			path: '/signUp',
+			element: <SingUp />,
 		},
 	]);
 	return <RouterProvider router={router} />;
