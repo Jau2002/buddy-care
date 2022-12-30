@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import Forms from '../components/Forms';
+import GoToHome from '../components/GoToHome';
 import { logIn } from '../utils/form';
 
 function LogIn(): ReactElement {
@@ -29,28 +30,21 @@ function LogIn(): ReactElement {
 											/>
 											<Link
 												className='small text-muted form-article--p'
-												to='/SignIn/user'
+												to='/signIn/user'
 											>
 												¿Se te olvidó tu contraseña?
 											</Link>
 											<p className='mb-5 pb-lg-2 form-article--link form-article--p'>
 												¿No tienes una cuenta?
 												<Link
-													to='/SignUp'
+													to='/signUp'
 													className='form-article--link form-article--p'
 												>
 													{' '}
 													Registrarse aquí
 												</Link>
 												<div className='d-grid gap-2 d-md-flex justify-content-md-end form-article--button'>
-													<Link
-														to='/'
-														className='small text-muted'
-													>
-														<button className='btn btn-outline-dark form-article--p'>
-															Pagina principal
-														</button>
-													</Link>
+													<GoToHome />
 												</div>
 											</p>
 										</div>

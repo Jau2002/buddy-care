@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
-import { Link, useRouteError } from 'react-router-dom';
+import { useRouteError } from 'react-router-dom';
+import GoToHome from '../components/GoToHome';
 import type { RouteError } from './pages';
 
 function NotFound(): ReactElement {
@@ -9,12 +10,7 @@ function NotFound(): ReactElement {
 			<h2>{status}</h2>
 			<p>{statusText}</p>
 			<h3>The page you´re looking for does not exist</h3>
-			<Link to='/'>
-				<input
-					type='button'
-					value='Go to Home'
-				/>
-			</Link>
+			<GoToHome />
 		</main>
 	);
 }

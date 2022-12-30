@@ -59,7 +59,7 @@ function Header(): ReactElement {
 						</div>
 					) : (
 						<Link
-							to='/SignIn/'
+							to='/signIn/'
 							className='navbar-brand'
 						>
 							<span className='nav-link text-white nav'>Registrarse</span>

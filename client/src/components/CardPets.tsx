@@ -11,14 +11,23 @@ function CardPets(): ReactElement {
 		<>
 			{getIsALogged() &&
 				allUserPets?.map(
-					({ id, adjunto, chip, nombre, raza }: petAction): ReactElement => (
+					({
+						id,
+						contenido,
+						chip,
+						nombre,
+						raza,
+						especie,
+					}: petAction): ReactElement => (
 						<div key={id}>
 							<img
-								src={adjunto}
+								src={contenido}
 								alt={raza}
+								loading='lazy'
 							/>
 							<h2>{nombre}</h2>
 							<span>{chip}</span>
+							<p>{especie}</p>
 						</div>
 					)
 				)}

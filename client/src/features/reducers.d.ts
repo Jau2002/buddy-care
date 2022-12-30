@@ -34,20 +34,23 @@ interface petsState {
 
 interface petAction {
 	id: number;
-	adjunto: string;
-	chip: number;
-	nombre: string;
-	edad: number;
-	especie: string;
-	estado: string;
-	falta: Date;
-	halta: TimeRanges;
 	id_cliente: number;
+	nombre: string;
+	especie: string;
+	raza: string;
+	edad: number;
+	peso: number;
+	estado: string;
 	id_madre: number;
 	id_padre: number;
+	adjunto: string;
 	nota: string;
-	peso: number;
-	raza: string;
+	chip: number;
+	falta: Date;
+	halta: TimeRanges;
+	id_originador: number;
+	originador: string;
+	contenido: string;
 }
 
 type SelectorPets = (state: RootState) => petAction[];

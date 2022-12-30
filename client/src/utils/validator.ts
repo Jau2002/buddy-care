@@ -4,9 +4,9 @@ function validator({ email, password, code }: Type, pathname: string): Type {
 	let errors: Type = {};
 
 	const { logInValidated, userValidated, changeValidated } = {
-		logInValidated: pathname === '/SignIn/',
-		userValidated: pathname === '/SignIn/user',
-		changeValidated: pathname === '/SignIn/password',
+		logInValidated: pathname === '/signIn/',
+		userValidated: pathname === '/signIn/user',
+		changeValidated: pathname === '/signIn/password',
 	};
 
 	if ((logInValidated || userValidated) && !email) {
