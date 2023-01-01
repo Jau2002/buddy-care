@@ -6,8 +6,7 @@ import { navigation } from '../utils/routes';
 import Nav from './Nav';
 
 function Header(): ReactElement {
-	const { logger, handleClick } = useCleaning();
-	console.log(localStorage.getItem('nombres') ?? logger?.length);
+	const { getIsALogged, handleClick, logger } = useCleaning();
 	return (
 		<header className='navbar navbar-expand-lg navbar-light bg-dark'>
 			<div className='container-fluid'>
@@ -34,7 +33,7 @@ function Header(): ReactElement {
 							loading='lazy'
 						/>
 					</a>
-					{localStorage.getItem('nombres') ?? logger?.length ? (
+					{getIsALogged() ? (
 						<div className='d-flex align-items-center'>
 							<button
 								type='button'

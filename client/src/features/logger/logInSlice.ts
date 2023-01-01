@@ -5,7 +5,7 @@ import type {
 	Clear,
 	LogInAction,
 	LogInState,
-	selectorLogger,
+	SelectorLogger,
 } from '../reducers';
 
 const initialState: LogInState = {
@@ -18,7 +18,7 @@ const logInSlice: Slice<LogInState> = createSlice({
 	reducers: {
 		getUserIsLogIn: (
 			state: any,
-			{ payload }: PayloadAction<object>
+			{ payload }: PayloadAction<LogInState>
 		): LogInState => ({
 			...state,
 			log: payload,
@@ -30,7 +30,7 @@ const logInSlice: Slice<LogInState> = createSlice({
 	},
 });
 
-export const selectLogIn: selectorLogger = (state: RootState): LogInAction[] =>
+export const selectLogIn: SelectorLogger = (state: RootState): LogInAction[] =>
 	state.logger.log;
 
 export const { getUserIsLogIn, clearUserIfLogIn } = logInSlice.actions;

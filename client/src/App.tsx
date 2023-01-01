@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import CardPets from './components/CardPets';
 import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import NotFound from './pages/NotFound';
@@ -25,6 +26,10 @@ function App(): ReactElement {
 		{
 			path: '/SignIn/password',
 			element: <PasswordRecovery />,
+		},
+		{
+			path: '/pets',
+			element: <CardPets />,
 		},
 	]);
 	return <RouterProvider router={router} />;

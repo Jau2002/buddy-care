@@ -38,9 +38,7 @@ rules:
       allowTemplateLiterals: false
   no-restricted-syntax: 0
   '@typescript-eslint/no-var-requires': 0
-  '@typescript-eslint/restrict-template-expressions':
-    - 2
-    - allowNullish: true
+  '@typescript-eslint/restrict-template-expressions': 0
   react/jsx-runtime: 0
   react/react-in-jsx-scope: 0
   '@typescript-eslint/strict-boolean-expressions': 0

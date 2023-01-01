@@ -1,7 +1,12 @@
 import { ThunkDispatch } from '@reduxjs/toolkit';
 import { Path } from 'react-router-dom';
 import type { Type } from '../components/components';
-import type { Clear, LogInAction, LogInState } from '../features/reducers';
+import type {
+	Clear,
+	LogInState,
+	petAction,
+	petsState,
+} from '../features/reducers';
 
 type Submit = (values: Type) => any;
 
@@ -20,7 +25,18 @@ type dispatcherUser = ThunkDispatch<LogInState>;
 
 type dispatchedUser = ThunkDispatch<Clear>;
 
+type dispatchPets = ThunkDispatch<petsState>;
+
+type validateIsLogged = () => boolean;
+
 interface Cleaning {
-	logger: LogInAction[];
 	handleClick;
+	getIsALogged: validateIsLogged;
+	logger: LogInAction[];
 }
+
+interface MedicalPets {
+	allUserPets: petAction[];
+}
+
+type LocalStorage = string | null;
