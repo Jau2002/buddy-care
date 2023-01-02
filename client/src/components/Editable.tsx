@@ -1,5 +1,5 @@
 import { ErrorMessage, Field } from 'formik';
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import type { Content } from './components';
 
 function Editable({ type, placeholder, name, display }: Content): ReactElement {

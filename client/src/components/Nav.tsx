@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import type { Navigate } from '../utils/utils';
 import type { LinkRoutes } from './components';

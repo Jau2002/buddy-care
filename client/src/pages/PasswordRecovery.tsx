@@ -1,6 +1,6 @@
-import { ReactElement } from 'react';
-import { Link } from 'react-router-dom';
+import type { ReactElement } from 'react';
 import Forms from '../components/Forms';
+import GoToHome from '../components/GoToHome';
 import { passwords } from '../utils/form';
 
 function PasswordRecovery(): ReactElement {
@@ -29,14 +29,7 @@ function PasswordRecovery(): ReactElement {
 									</div>
 								</div>
 								<div className='d-grid gap-2 d-md-flex justify-content-md-end form-article--button'>
-									<Link
-										to='/'
-										className='small text-muted'
-									>
-										<button className='btn btn-outline-dark'>
-											Pagina principal
-										</button>
-									</Link>
+									<GoToHome />
 								</div>
 							</div>
 						</div>

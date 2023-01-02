@@ -1,24 +1,32 @@
-import { ReactElement } from 'react';
-import { petAction } from '../features/reducers';
-import useCleaning from '../hooks/useCleaning';
+import type { ReactElement } from 'react';
+import type { PetAction } from '../features/pets/pets';
+import useAuthenticated from '../hooks/useAuthenticated';
 import useMedicalPets from '../hooks/useMedicalPets';
 
 function CardPets(): ReactElement {
 	const { allUserPets } = useMedicalPets();
-	const { getIsALogged } = useCleaning();
-	console.log(allUserPets);
+	const { useIsLogged } = useAuthenticated();
 	return (
 		<>
-			{getIsALogged() &&
+			{useIsLogged() &&
 				allUserPets?.map(
-					({ id, adjunto, chip, nombre, raza }: petAction): ReactElement => (
+					({
+						id,
+						contenido,
+						chip,
+						nombre,
+						raza,
+						especie,
+					}: PetAction): ReactElement => (
 						<div key={id}>
 							<img
-								src={adjunto}
+								src={contenido}
 								alt={raza}
+								loading='lazy'
 							/>
 							<h2>{nombre}</h2>
 							<span>{chip}</span>
+							<p>{especie}</p>
 						</div>
 					)
 				)}

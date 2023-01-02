@@ -1,12 +1,14 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
-import { LogInAction } from '../features/reducers';
+import type { LogInAction } from '../features/logger/logger';
+import useAuthenticated from '../hooks/useAuthenticated';
 import useCleaning from '../hooks/useCleaning';
 import { navigation } from '../utils/routes';
 import Nav from './Nav';
 
 function Header(): ReactElement {
-	const { getIsALogged, handleClick, logger } = useCleaning();
+	const { handleClick, logger } = useCleaning();
+	const { useIsLogged } = useAuthenticated();
 	return (
 		<header className='navbar navbar-expand-lg navbar-light bg-dark'>
 			<div className='container-fluid'>
@@ -33,7 +35,7 @@ function Header(): ReactElement {
 							loading='lazy'
 						/>
 					</a>
-					{getIsALogged() ? (
+					{useIsLogged() ? (
 						<div className='d-flex align-items-center'>
 							<button
 								type='button'
@@ -59,7 +61,7 @@ function Header(): ReactElement {
 						</div>
 					) : (
 						<Link
-							to='/SignIn/'
+							to='/signIn/'
 							className='navbar-brand'
 						>
 							<span className='nav-link text-white nav'>Registrarse</span>

@@ -11,5 +11,11 @@ interface Attributes {
 }
 
 interface Query {
-	myQuery: string;
+	myQuery?: string;
+}
+
+interface Submit {
+	email?: string;
+	password?: string;
+	id?: number[];
 }
