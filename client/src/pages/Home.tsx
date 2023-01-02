@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import Explanation from '../components/Explanation';
 import Footer from '../components/Footer';
 import Header from '../components/Header';

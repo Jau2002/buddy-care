@@ -1,29 +1,27 @@
-import type { PayloadAction, Slice } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import type { RootState } from '../../app/store';
+import type { RootState } from '../../app/app';
 import type {
 	Clear,
 	LogInAction,
 	LogInState,
+	PayloadLogger,
 	SelectorLogger,
-} from '../reducers';
+	SliceLogger,
+} from './logger';
 
 const initialState: LogInState = {
 	log: [],
 };
 
-const logInSlice: Slice<LogInState> = createSlice({
+const logInSlice: SliceLogger = createSlice({
 	name: 'logIn',
 	initialState,
 	reducers: {
-		getUserIsLogIn: (
-			state: any,
-			{ payload }: PayloadAction<LogInState>
-		): LogInState => ({
+		getUserIsLogIn: (state: any, { payload }: PayloadLogger): LogInState => ({
 			...state,
 			log: payload,
 		}),
-		clearUserIfLogIn: (state): Clear => ({
+		clearUserIfLogIn: (state: any, _: PayloadLogger): Clear => ({
 			...state,
 			log: [],
 		}),

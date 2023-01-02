@@ -1,18 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 import logInReducer from '../features/logger/logInSlice';
 import petSlice from '../features/pets/petSlice';
-import type { Store } from './app';
+import type { StoreReducers } from './app';
 
-const store: ToolkitStore<Store> = configureStore({
+const store: StoreReducers = configureStore({
 	reducer: {
 		logger: logInReducer,
 		pets: petSlice,
 	},
 });
-
-export type RootState = ReturnType<typeof store.getState>;
-
-export type AppDispatch = typeof store.dispatch;
 
 export default store;

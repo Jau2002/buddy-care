@@ -1,5 +1,5 @@
 import { Form, Formik } from 'formik';
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import Editable from '../components/Editable';
 import useAuthenticated from '../hooks/useAuthenticated';
 import type { Attributes } from '../utils/utils';

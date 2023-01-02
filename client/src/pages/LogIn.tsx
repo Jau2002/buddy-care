@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import Forms from '../components/Forms';
 import GoToHome from '../components/GoToHome';

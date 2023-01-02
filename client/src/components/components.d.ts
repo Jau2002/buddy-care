@@ -1,10 +1,5 @@
 import type { Attributes } from '../utils/utils';
 
-interface useNavLink {
-	isActive: boolean;
-	isPending: boolean;
-}
-
 interface LinkRoutes {
 	link: Navigate[];
 }
@@ -26,4 +21,10 @@ interface Type {
 	email?: string;
 	password?: string;
 	code?: string;
+	surname?: string;
+	name?: string;
+	country?: string;
+	state?: string;
+	direction?: string;
+	number?: string;
 }

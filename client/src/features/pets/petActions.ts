@@ -1,10 +1,11 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
-import type { DispatchUser, GetUserAction } from '../reducers';
+import { Query } from '../../utils/utils';
+import type { GetPets, GetPetsAction } from './pets';
 import { getPetForClient } from './petSlice';
 
-export function getPets(query: object): GetUserAction {
-	return async (dispatch: Dispatch): Promise<DispatchUser> => {
+export function getPets(query: Query): GetPetsAction {
+	return async (dispatch: Dispatch): GetPets => {
 		const { data } = await axios.post('/query', query);
 		try {
 			return dispatch(getPetForClient(data));

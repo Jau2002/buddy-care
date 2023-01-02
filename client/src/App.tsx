@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import CardPets from './components/CardPets';
 import Home from './pages/Home';
@@ -37,6 +37,7 @@ function App(): ReactElement {
 			element: <SingUp />,
 		},
 	]);
+
 	return <RouterProvider router={router} />;
 }
 

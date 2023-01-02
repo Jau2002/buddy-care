@@ -1,27 +1,29 @@
-import type { PayloadAction, Slice } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import type { RootState } from '../../app/store';
-import type { petAction, petsState, SelectorPets } from '../reducers';
+import type { RootState } from '../../app/app';
+import type {
+	PayloadPet,
+	PetAction,
+	PetsState,
+	SelectorPets,
+	SlicePet,
+} from './pets';
 
-const initialState: petsState = {
+const initialState: PetsState = {
 	pet: [],
 };
 
-const petSlice: Slice<petsState> = createSlice({
+const petSlice: SlicePet = createSlice({
 	name: 'pets',
 	initialState,
 	reducers: {
-		getPetForClient: (
-			state: any,
-			{ payload }: PayloadAction<petsState>
-		): petsState => ({
+		getPetForClient: (state: any, { payload }: PayloadPet): PetsState => ({
 			...state,
 			pet: payload,
 		}),
 	},
 });
 
-export const selectPets: SelectorPets = (state: RootState): petAction[] =>
+export const selectPets: SelectorPets = (state: RootState): PetAction[] =>
 	state.pets.pet;
 
 export const { getPetForClient } = petSlice.actions;

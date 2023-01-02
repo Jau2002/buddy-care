@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../app/hook';
+import type { LogInAction } from '../features/logger/logger';
 import { selectLogIn } from '../features/logger/logInSlice';
 import { getPets } from '../features/pets/petActions';
+import type { PetAction } from '../features/pets/pets';
 import { selectPets } from '../features/pets/petSlice';
-import { LogInAction, petAction } from '../features/reducers';
 import type { Query } from '../utils/utils';
 import type { dispatchPets, MedicalPets } from './hook';
 
@@ -22,7 +23,7 @@ function useMedicalPets(): MedicalPets {
 		dispatch(getPets(query));
 	}, [dispatch]);
 
-	const allUserPets: petAction[] = useAppSelector(selectPets);
+	const allUserPets: PetAction[] = useAppSelector(selectPets);
 
 	return { allUserPets };
 }

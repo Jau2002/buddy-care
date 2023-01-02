@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import Forms from '../components/Forms';
 import GoToHome from '../components/GoToHome';
 import { logIn } from '../utils/form';
