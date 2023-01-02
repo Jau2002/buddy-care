@@ -18,15 +18,24 @@ function CardPets(): ReactElement {
 						raza,
 						especie,
 					}: PetAction): ReactElement => (
-						<div key={id}>
-							<img
-								src={contenido}
-								alt={raza}
-								loading='lazy'
-							/>
-							<h2>{nombre}</h2>
-							<span>{chip}</span>
-							<p>{especie}</p>
+						<div key={id} className='card mb-3 card-pets-div'>
+							<div className='row g-0'>
+								<div className='col-md-4'>
+									<img 
+									    className='img-fluid rounded-start card-pets-img'
+										src={contenido}
+										alt={raza}
+										loading='lazy'
+									/>
+								</div>
+								<div className='col-md-8'>
+									<div className='card-body'>
+										<h2 className='card-title card-pets-h2'>{nombre}</h2>
+										<span className='card-text card-pets-span'>{chip}</span>
+										<p className='card-text card-pets-p'>{especie}</p>
+									</div>
+								</div>
+							</div>
 						</div>
 					)
 				)}
