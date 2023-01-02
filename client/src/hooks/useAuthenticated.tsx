@@ -22,14 +22,14 @@ function useAuthenticated(): Auth {
 
 	const navigate: NavigateFunction = useNavigate();
 
-	const useIsLogged = (): boolean => {
+	const useIsLogged: () => boolean = () => {
 		if (!logger.length) {
 			const email: LocalStorage = window.localStorage.getItem('email');
 
 			const password: LocalStorage = window.localStorage.getItem('password');
 
 			return email && password
-				? dispatch(getUser(prevSubmit({ email, password })))
+				? dispatch(getUser(prevSubmit({ email, password }, pathname)))
 				: false;
 		}
 		return true;
@@ -48,7 +48,7 @@ function useAuthenticated(): Auth {
 
 					return navigate('/');
 			  })
-			: dispatch(getUser(prevSubmit({ email, password })));
+			: dispatch(getUser(prevSubmit({ email, password }, pathname)));
 	};
 
 	const defaultInputs: Type = {
