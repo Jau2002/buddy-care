@@ -2,16 +2,12 @@ import type { Navigate } from './utils';
 
 export const navigation: Navigate[] = [
 	{
-		route: 'Registrase',
-		url: '/SignIn/',
-	},
-	{
 		route: 'Tienda',
 		url: '/shop',
 	},
 	{
 		route: 'Mascotas',
-		url: '/history',
+		url: '/pets',
 	},
 	{
 		route: 'Servicios',

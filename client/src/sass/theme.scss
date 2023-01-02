@@ -1,14 +1,16 @@
 $lato: 'Lato', sans-serif;
 $open-sans: 'Open Sans', sans-serif;
 $faux-dark-slate-blue: #393f81;
-$faux-dark-rose-dust: #9a616d;
+$faux-dark-rose-dust: #ff9800;
 $white: #fff;
+$dark-charcoal: #19191b;
+$black: #000;
 
 @font-face {
 	font-family: Lato;
 	font-weight: 900;
 	font-style: normal;
-	src: url('../assets/fonts/Lato/Lato-Black.woff2') format('woff2');
+	src: url('/fonts/Lato/Lato-Black.woff2') format('woff2');
 	font-display: swap;
 }
 
@@ -16,7 +18,7 @@ $white: #fff;
 	font-family: 'Open Sans';
 	font-weight: 500;
 	font-style: normal;
-	src: url('../assets/fonts/Open-Sans/OpenSans-Medium.woff2') format('woff2');
+	src: url('/fonts/Open-Sans/OpenSans-Medium.woff2') format('woff2');
 	font-display: swap;
 }
 
@@ -24,7 +26,6 @@ $white: #fff;
 	font-family: 'Open Sans';
 	font-weight: 500;
 	font-style: italic;
-	src: url('../assets/fonts/Open-Sans/OpenSans-MediumItalic.woff2')
-		format('woff2');
+	src: url('/fonts/Open-Sans/OpenSans-MediumItalic.woff2') format('woff2');
 	font-display: swap;
 }

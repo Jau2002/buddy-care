@@ -6,13 +6,15 @@ dotenv.config({ path: '.env.development' });
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, NODE_ENV, DB_PORT } =
 	process.env;
 
+const PORT: number = parseInt(DB_PORT as string, 10);
+
 const sequelize: Sequelize =
 	NODE_ENV === 'production'
 		? new Sequelize({
 				database: DB_NAME ?? 'buddycare',
 				dialect: 'postgres',
 				host: DB_HOST ?? 'localhost',
-				port: DB_PORT ?? 5432,
+				port: PORT ?? 5432,
 				username: DB_USER ?? 'postgres',
 				password: DB_PASSWORD ?? '',
 				pool: {

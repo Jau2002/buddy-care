@@ -1,0 +1,30 @@
+.footer-div {
+	background: $dark-charcoal;
+	min-height: 10vh;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+
+	&--div {
+		background-color: $dark-charcoal;
+		display: flex;
+	}
+
+	& > div {
+		background-color: $dark-charcoal;
+		width: 50%;
+		padding: 10px;
+	}
+
+	& > div:first-child {
+		margin-right: 20px;
+	}
+
+	&--p {
+		font: 900 1.2em $lato;
+		border-radius: 5px;
+		color: $white;
+		text-shadow: none;
+		text-align: center;
+	}
+}

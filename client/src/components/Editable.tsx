@@ -1,5 +1,5 @@
 import { ErrorMessage, Field } from 'formik';
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import type { Content } from './components';
 
 function Editable({ type, placeholder, name, display }: Content): ReactElement {
@@ -7,7 +7,7 @@ function Editable({ type, placeholder, name, display }: Content): ReactElement {
 		<section className='form-outline mb-4'>
 			<label
 				htmlFor={type}
-				className='form-label'
+				className='form-label form-section--label'
 			>
 				{display}
 			</label>
@@ -22,7 +22,7 @@ function Editable({ type, placeholder, name, display }: Content): ReactElement {
 				<ErrorMessage
 					name={name}
 					component='span'
-					className='alert-link'
+					className='alert-link mb-0'
 				/>
 			</div>
 		</section>

@@ -1,0 +1,12 @@
+.nav {
+	font: 900 1em $lato;
+
+	&--button {
+		margin: 0 1rem;
+		font: 500 1em $open-sans;
+	}
+
+	&--h3 {
+		font: 900 1.2em $lato;
+	}
+}

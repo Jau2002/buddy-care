@@ -9,3 +9,13 @@ interface Attributes {
 	name: string;
 	display: string;
 }
+
+interface Query {
+	myQuery?: string;
+}
+
+interface Submit {
+	email?: string;
+	password?: string;
+	id?: number[];
+}

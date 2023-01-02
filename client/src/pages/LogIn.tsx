@@ -1,6 +1,7 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import Forms from '../components/Forms';
+import GoToHome from '../components/GoToHome';
 import { logIn } from '../utils/form';
 
 function LogIn(): ReactElement {
@@ -14,9 +15,10 @@ function LogIn(): ReactElement {
 								<div className='row g-0'>
 									<div className='col-md-6 col-lg-5 d-none d-md-block'>
 										<img
-											src='../../public/login-hourse.jpg'
+											src='/img/vets.webp'
 											alt='login form'
-											className='img-fluid form-article--img'
+											className='img-fluid form-article--img border-1px'
+											loading='lazy'
 										/>
 									</div>
 									<div className='col-md-6 col-lg-7 d-flex align-items-center'>
@@ -27,19 +29,23 @@ function LogIn(): ReactElement {
 												title='Iniciar sesión en su cuenta'
 											/>
 											<Link
-												className='small text-muted'
-												to='/SignIn/user'
+												className='small text-muted form-article--p'
+												to='/signIn/user'
 											>
 												¿Se te olvidó tu contraseña?
 											</Link>
-											<p className='mb-5 pb-lg-2 form-article--link'>
+											<p className='mb-5 pb-lg-2 form-article--link form-article--p'>
 												¿No tienes una cuenta?
 												<Link
-													to='/SignUp'
-													className='form-article--link'
+													to='/signUp'
+													className='form-article--link form-article--p'
 												>
+													{' '}
 													Registrarse aquí
 												</Link>
+												<div className='d-grid gap-2 d-md-flex justify-content-md-end form-article--button'>
+													<GoToHome />
+												</div>
 											</p>
 										</div>
 									</div>
