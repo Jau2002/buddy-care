@@ -19,3 +19,9 @@ interface Submit {
 	password?: string;
 	id?: number[];
 }
+
+interface Previous {
+	email: string;
+	password: string;
+	id: number[];
+}
