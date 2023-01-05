@@ -1,5 +1,5 @@
 import { ThunkDispatch } from '@reduxjs/toolkit';
-import { Path } from 'react-router-dom';
+import type { Path } from 'react-router-dom';
 import type { Type } from '../components/components';
 import type { LogInState } from '../features/logger/logger';
 import type { PetAction, PetsState } from '../features/pets/pets';
