@@ -1,3 +1,4 @@
+import { PetAction } from '../features/pets/pets';
 import type { Attributes } from '../utils/utils';
 
 interface LinkRoutes {
@@ -27,4 +28,9 @@ interface Type {
 	state?: string;
 	direction?: string;
 	number?: string;
+}
+
+interface AllPets {
+	allUserPets?: PetAction[];
+	petForUser?: PetAction[];
 }

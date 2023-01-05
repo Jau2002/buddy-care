@@ -36,8 +36,9 @@ function useAuthenticated(): Auth {
 	};
 
 	const handleSubmit: Submit = ({ email, password }: Type) => {
-		useIsLogged()
-			? logger.map(({ password, email, id, nombres }: LogInAction) => {
+		if (useIsLogged()) {
+			pathname === '/signIn/' &&
+				logger.map(({ password, email, id, nombres }: LogInAction) => {
 					window.localStorage.setItem('nombres', nombres);
 
 					window.localStorage.setItem('id', id.toString());
@@ -47,8 +48,9 @@ function useAuthenticated(): Auth {
 					window.localStorage.setItem('password', password);
 
 					return navigate('/');
-			  })
-			: dispatch(getUser(prevSubmit({ email, password }, pathname)));
+				});
+		}
+		dispatch(getUser(prevSubmit({ email, password }, pathname)));
 	};
 
 	const defaultInputs: Type = {

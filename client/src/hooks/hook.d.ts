@@ -1,5 +1,5 @@
 import { ThunkDispatch } from '@reduxjs/toolkit';
-import type { Path } from 'react-router-dom';
+import type { Params, Path } from 'react-router-dom';
 import type { Type } from '../components/components';
 import type { LogInState } from '../features/logger/logger';
 import type { PetAction, PetsState } from '../features/pets/pets';
@@ -31,6 +31,11 @@ interface Cleaning {
 
 interface MedicalPets {
 	allUserPets: PetAction[];
+	pathname: string;
+	id_pet?: PetAction;
+	petForUser: PetAction[];
 }
 
 type LocalStorage = string | null;
+
+type Param = Readonly<Params<string>>;

@@ -1,35 +1,31 @@
 import type { ReactElement } from 'react';
 import type { PetAction } from '../features/pets/pets';
-import useAuthenticated from '../hooks/useAuthenticated';
-import useMedicalPets from '../hooks/useMedicalPets';
+import type { AllPets } from './components';
 
-function CardPets(): ReactElement {
-	const { allUserPets } = useMedicalPets();
-	const { useIsLogged } = useAuthenticated();
+function CardPets({ allUserPets }: AllPets): ReactElement {
 	return (
 		<>
-			{useIsLogged() &&
-				allUserPets?.map(
-					({
-						id,
-						contenido,
-						chip,
-						nombre,
-						raza,
-						especie,
-					}: PetAction): ReactElement => (
-						<div key={id}>
-							<img
-								src={contenido}
-								alt={raza}
-								loading='lazy'
-							/>
-							<h2>{nombre}</h2>
-							<span>{chip}</span>
-							<p>{especie}</p>
-						</div>
-					)
-				)}
+			{allUserPets?.map(
+				({
+					id,
+					contenido,
+					chip,
+					nombre,
+					raza,
+					especie,
+				}: PetAction): ReactElement => (
+					<div key={id}>
+						<img
+							src={contenido}
+							alt={raza}
+							loading='lazy'
+						/>
+						<h2>{nombre}</h2>
+						<span>{chip}</span>
+						<p>{especie}</p>
+					</div>
+				)
+			)}
 		</>
 	);
 }
