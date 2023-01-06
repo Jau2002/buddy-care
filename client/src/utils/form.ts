@@ -77,6 +77,24 @@ export const signUp: Attributes[] = [
 		display: 'Teléfono / Movil',
 	},
 	{
+		type: 'text',
+		placeholder: '110911',
+		name: 'postal',
+		display: 'Código Postal',
+	},
+	{
+		type: 'text',
+		placeholder: 'https://www.facebook.com/xxxx.xxx.xxx/',
+		name: 'Facebook',
+		display: 'Facebook',
+	},
+	{
+		type: 'text',
+		placeholder: 'https://www.instagram.com/xxxxxxxx',
+		name: 'Instagram',
+		display: 'Instagram',
+	},
+	{
 		type: 'email',
 		placeholder: 'Correo electrónico',
 		name: 'email',

@@ -28,6 +28,9 @@ interface Type {
 	state?: string;
 	direction?: string;
 	number?: string;
+	postal?: string;
+	Facebook?: string;
+	Instagram?: string;
 }
 
 interface AllPets {

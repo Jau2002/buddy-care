@@ -1,5 +1,5 @@
 import { ThunkDispatch } from '@reduxjs/toolkit';
-import type { Params, Path } from 'react-router-dom';
+import type { Params } from 'react-router-dom';
 import type { Type } from '../components/components';
 import type { LogInState } from '../features/logger/logger';
 import type { PetAction, PetsState } from '../features/pets/pets';
@@ -11,11 +11,6 @@ interface Auth {
 	defaultInputs: Type;
 	pathname: string;
 	useIsLogged: () => boolean;
-}
-
-interface Location extends Path {
-	state: unknown;
-	key: Key;
 }
 
 type dispatcherUser = ThunkDispatch<LogInState>;
@@ -36,6 +31,6 @@ interface MedicalPets {
 	petForUser: PetAction[];
 }
 
-type LocalStorage = string | null;
-
 type Param = Readonly<Params<string>>;
+
+type LocalStorage = string | null;

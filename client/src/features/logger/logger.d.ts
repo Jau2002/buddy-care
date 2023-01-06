@@ -8,30 +8,65 @@ interface LogInAction {
 	nombres: string;
 	id: number;
 }
+interface UserIsRegister {
+	email: string;
+}
+
+interface UserCreated {
+	email?: string;
+	password?: string;
+	code?: string;
+	surname?: string;
+	name?: string;
+	country?: string;
+	state?: string;
+	direction?: string;
+	number?: string;
+}
 
 interface LogInState {
-	log: LogInAction[];
+	log?: LogInAction[];
+	user?: UserIsRegister[];
+	out?: UserCreated[];
 }
 
 type SliceLogger = Slice<LogInState>;
-
-interface Clear {
-	log: never[];
-}
 
 type PayloadLogger = PayloadAction<LogInState>;
 
 type SelectorLogger = (state: RootState) => LogInAction[];
 
-interface DispatchUser {
+type SelectorUser = (state: RootState) => UserIsRegister[];
+
+type SelectorCreated = (state: RootState) => UserCreated[];
+
+interface DispatchLogger {
 	payload?: LogInAction;
 	type: string;
 }
 
-type GetUser = Promise<DispatchUser>;
+interface DispatchUser {
+	payload?: UserIsRegister;
+	type: string;
+}
+
+interface DispatchUserCreate {
+	payload?: UserCreated;
+	type: string;
+}
+
+type GetUser = Promise<DispatchLogger>;
 
 type GetUserAction = (dispatch: Dispatch) => GetUser;
 
-type ClearUserAction = (dispatch: Dispatch) => DispatchUser;
+type ClearUserAction = (dispatch: Dispatch) => DispatchLogger;
 
 type ClearUserFunc = () => ClearUserAction;
+
+type ValidateUser = Promise<DispatchUser>;
+
+type ValidateUserIsRegister = (dispatch: Dispatch) => ValidateUser;
+
+type CreateUser = Promise<DispatchUserCreate>;
+
+type PostUserRegister = (dispatch: Dispatch) => CreateUser;
