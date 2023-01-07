@@ -7,7 +7,7 @@ function massive(destiny: string | undefined, path: string): Mail {
 		mailer = {
 			mail: destiny,
 			asunto: 'Se a registrado correctamente',
-			cuerpo: `Usuario ${destiny} se a registrado ${new Date()} si no concuerda la información le aconsejamos cambie su contraseña`,
+			cuerpo: `<h1>Estimado usuario ${destiny}</h1> <br> <p>se a registrado ${new Date()}.</p> <span>Si no se ha registrado recientemente le aconsejamos cambie su contraseña <a href='https://buddy-care.netlify.app/signIn/user' target='_blank' rel='noreferrer'>Cambiar contraseña</span>`,
 		};
 	}
 
