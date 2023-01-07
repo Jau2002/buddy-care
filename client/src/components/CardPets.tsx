@@ -1,10 +1,9 @@
 import type { ReactElement } from 'react';
 import type { PetAction } from '../features/pets/pets';
 import useAuthenticated from '../hooks/useAuthenticated';
-import useMedicalPets from '../hooks/useMedicalPets';
+import type { AllPets } from './components';
 
-function CardPets(): ReactElement {
-	const { allUserPets } = useMedicalPets();
+function CardPets({ allUserPets }: AllPets): ReactElement {
 	const { useIsLogged } = useAuthenticated();
 	return (
 		<>

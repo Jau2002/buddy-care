@@ -18,6 +18,7 @@ import axios from 'axios';
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import store from './app/store';
 import './sass/styles.scss';
@@ -30,7 +31,9 @@ const root = createRoot(document.getElementById('root') as HTMLElement);
 root.render(
 	<React.StrictMode>
 		<Provider store={store}>
-			<App />
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
 		</Provider>
 	</React.StrictMode>
 );

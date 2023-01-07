@@ -1,18 +1,27 @@
 import { Dispatch } from '@reduxjs/toolkit';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import type { Query } from '../../utils/utils';
 import type {
 	ClearUserAction,
 	ClearUserFunc,
-	DispatchUser,
+	CreateUser,
+	DispatchLogger,
 	GetUser,
 	GetUserAction,
+	PostUserRegister,
+	ValidateUser,
+	ValidateUserIsRegister,
 } from './logger';
-import { clearUserIfLogIn, getUserIsLogIn } from './logInSlice';
+import {
+	clearUserIfLogIn,
+	createUser,
+	getUserIsLogIn,
+	validateUser,
+} from './logInSlice';
 
 export function getUser(query: Query): GetUserAction {
 	return async (dispatch: Dispatch): GetUser => {
-		const { data } = await axios.post('/query', query);
+		const { data }: AxiosResponse = await axios.post('/query', query);
 		try {
 			return dispatch(getUserIsLogIn(data));
 		} catch (err) {
@@ -23,5 +32,27 @@ export function getUser(query: Query): GetUserAction {
 
 export const clearUser: ClearUserFunc =
 	(): ClearUserAction =>
-	(dispatch: Dispatch): DispatchUser =>
+	(dispatch: Dispatch): DispatchLogger =>
 		dispatch(clearUserIfLogIn([]));
+
+export function validateUserIsRegister(query: Query): ValidateUserIsRegister {
+	return async (dispatch: Dispatch): ValidateUser => {
+		const { data } = await axios.post('/query', query);
+		try {
+			return dispatch(validateUser(data));
+		} catch (err) {
+			throw new Error((err as Error).message);
+		}
+	};
+}
+
+export function postUserRegister(body: object): PostUserRegister {
+	return async (dispatch: Dispatch): CreateUser => {
+		const { data } = await axios.post('/clientes', body);
+		try {
+			return dispatch(createUser(data));
+		} catch (err) {
+			throw new Error((err as Error).message);
+		}
+	};
+}

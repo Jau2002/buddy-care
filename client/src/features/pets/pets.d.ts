@@ -1,8 +1,9 @@
 import { PayloadAction, Slice } from '@reduxjs/toolkit';
-import { RootState } from '../app/app';
+import type { RootState } from '../app/app';
 
 interface PetsState {
-	pet: [];
+	pets: never[];
+	detailPet: never[];
 }
 
 interface PetAction {
@@ -31,6 +32,8 @@ type SlicePet = Slice<PetsState>;
 type PayloadPet = PayloadAction<PetsState>;
 
 type SelectorPets = (state: RootState) => PetAction[];
+
+type SelectorPet = (state: RootState) => PetAction[];
 
 interface DispatchPets {
 	payload?: PetsState;

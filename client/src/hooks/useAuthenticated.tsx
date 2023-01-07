@@ -1,17 +1,22 @@
-import { NavigateFunction, useLocation, useNavigate } from 'react-router-dom';
+import {
+	Location,
+	NavigateFunction,
+	useLocation,
+	useNavigate,
+} from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../app/hook';
 import type { Type } from '../components/components';
-import type { LogInAction } from '../features/logger/logger';
-import { getUser } from '../features/logger/logInActions';
-import { selectLogIn } from '../features/logger/logInSlice';
+import type { LogInAction, UserIsRegister } from '../features/logger/logger';
+import {
+	getUser,
+	postUserRegister,
+	validateUserIsRegister,
+} from '../features/logger/logInActions';
+import { selectLogIn, selectUser } from '../features/logger/logInSlice';
+import { generatedMail } from '../features/mailer/mailAction';
+import massive from '../utils/massive';
 import prevSubmit from '../utils/prevSubmit';
-import type {
-	Auth,
-	dispatcherUser,
-	LocalStorage,
-	Location,
-	Submit,
-} from './hook';
+import type { Auth, dispatcherUser, LocalStorage, Submit } from './hook';
 
 function useAuthenticated(): Auth {
 	const dispatch: dispatcherUser = useAppDispatch();
@@ -30,25 +35,78 @@ function useAuthenticated(): Auth {
 
 			return email && password
 				? dispatch(getUser(prevSubmit({ email, password }, pathname)))
-				: false;
+				: navigate('/signIn/');
 		}
 		return true;
 	};
 
-	const handleSubmit: Submit = ({ email, password }: Type) => {
-		useIsLogged()
-			? logger.map(({ password, email, id, nombres }: LogInAction) => {
-					window.localStorage.setItem('nombres', nombres);
+	const user: UserIsRegister[] = useAppSelector(selectUser);
 
-					window.localStorage.setItem('id', id.toString());
+	const date = new Date();
 
-					window.localStorage.setItem('email', email);
+	function getRandomInt(min: number, max: number): number {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.floor(Math.random() * (max - min) + min);
+	}
 
-					window.localStorage.setItem('password', password);
+	const handleSubmit: Submit = ({
+		email,
+		password,
+		surname,
+		country,
+		direction,
+		name,
+		number,
+		state,
+		postal,
+		Facebook,
+		Instagram,
+	}: Type) => {
+		if (pathname === '/signIn/') {
+			useIsLogged()
+				? dispatch(getUser(prevSubmit({ email, password }, pathname))) &&
+				  logger.map(({ password, email, id, nombres }: LogInAction) => {
+						window.localStorage.setItem('nombres', nombres);
 
-					return navigate('/');
-			  })
-			: dispatch(getUser(prevSubmit({ email, password }, pathname)));
+						window.localStorage.setItem('id', id.toString());
+
+						window.localStorage.setItem('email', email);
+
+						window.localStorage.setItem('password', password);
+
+						dispatch(generatedMail(massive(email, pathname)));
+
+						return navigate('/');
+				  })
+				: dispatch(getUser(prevSubmit({ email, password }, pathname)));
+		}
+
+		if (pathname === '/signUp') {
+			dispatch(validateUserIsRegister(prevSubmit({ email }, pathname)));
+			const registered = {
+				id: getRandomInt(1111111, 9999999),
+				apellido: surname,
+				nombres: name,
+				pais: country,
+				localidad: state,
+				direccion: direction,
+				cp: postal,
+				telefono: number,
+				email,
+				usuario: '',
+				facebook: Facebook,
+				password,
+				instagram: Instagram,
+				notas_int: '',
+				falta: date.toLocaleDateString('en-GB').split('/').reverse().join('-'),
+				halta: '00:00:00',
+			};
+			!user.length &&
+				dispatch(postUserRegister(registered)) &&
+				dispatch(generatedMail(massive(email, pathname))) &&
+				navigate('/signIn/');
+		}
 	};
 
 	const defaultInputs: Type = {
@@ -61,6 +119,9 @@ function useAuthenticated(): Auth {
 		state: '',
 		direction: '',
 		number: '',
+		postal: '',
+		Facebook: '',
+		Instagram: '',
 	};
 
 	return { handleSubmit, defaultInputs, pathname, useIsLogged };

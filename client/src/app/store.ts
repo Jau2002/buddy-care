@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logInReducer from '../features/logger/logInSlice';
-import petSlice from '../features/pets/petSlice';
+import mailReducer from '../features/mailer/mailSlice';
+import petsReducer from '../features/pets/petSlice';
 import type { StoreReducers } from './app';
 
 const store: StoreReducers = configureStore({
 	reducer: {
 		logger: logInReducer,
-		pets: petSlice,
+		medical: petsReducer,
+		massive: mailReducer,
 	},
 });
 

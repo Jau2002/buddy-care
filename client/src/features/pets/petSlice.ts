@@ -4,12 +4,14 @@ import type {
 	PayloadPet,
 	PetAction,
 	PetsState,
+	SelectorPet,
 	SelectorPets,
 	SlicePet,
 } from './pets';
 
 const initialState: PetsState = {
-	pet: [],
+	pets: [],
+	detailPet: [],
 };
 
 const petSlice: SlicePet = createSlice({
@@ -18,14 +20,21 @@ const petSlice: SlicePet = createSlice({
 	reducers: {
 		getPetForClient: (state: any, { payload }: PayloadPet): PetsState => ({
 			...state,
-			pet: payload,
+			pets: payload,
+		}),
+		getDetailPet: (state: any, { payload }: PayloadPet): PetsState => ({
+			...state,
+			detailPet: payload,
 		}),
 	},
 });
 
-export const selectPets: SelectorPets = (state: RootState): PetAction[] =>
-	state.pets.pet;
+export const selectPets: SelectorPets = ({ medical }: RootState): PetAction[] =>
+	medical.pets;
 
-export const { getPetForClient } = petSlice.actions;
+export const selectPet: SelectorPet = ({ medical }: RootState): PetAction[] =>
+	medical.detailPet;
+
+export const { getPetForClient, getDetailPet } = petSlice.actions;
 
 export default petSlice.reducer;

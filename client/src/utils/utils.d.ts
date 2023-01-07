@@ -1,3 +1,5 @@
+import { PetAction } from '../features/pets/pets';
+
 export interface Navigate {
 	route: string;
 	url: string;
@@ -17,11 +19,18 @@ interface Query {
 interface Submit {
 	email?: string;
 	password?: string;
-	id?: number[];
+	id_client?: number[];
+	id_pet?: PetAction;
 }
 
 interface Previous {
 	email: string;
 	password: string;
 	id: number[];
+}
+
+interface Mail {
+	mail?: string;
+	asunto?: string;
+	cuerpo?: string;
 }
