@@ -1,5 +1,5 @@
 import { Dispatch, PayloadAction, Slice } from '@reduxjs/toolkit';
-import { RootState } from '../app/app';
+import type { RootState } from '../app/app';
 
 interface LogInAction {
 	email: string;
@@ -25,9 +25,9 @@ interface UserCreated {
 }
 
 interface LogInState {
-	log?: LogInAction[];
-	user?: UserIsRegister[];
-	out?: UserCreated[];
+	log: LogInAction[];
+	user: UserIsRegister[];
+	out: UserCreated[];
 }
 
 type SliceLogger = Slice<LogInState>;

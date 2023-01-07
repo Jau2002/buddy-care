@@ -1,11 +1,14 @@
 import type { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 import type { TypedUseSelectorHook } from 'react-redux';
-import { LogInState, petsState } from '../features/reducers';
+import type { LogInState } from '../features/logger/logger';
+import type { MailState } from '../features/mailer/mail';
+import type { PetsState } from '../features/pets/pets';
 import store from './store';
 
 interface Store {
 	logger: LogInState;
-	pets: petsState;
+	medical: PetsState;
+	massive: MailState;
 }
 
 type StoreReducers = ToolkitStore<Store>;

@@ -41,15 +41,17 @@ const logInSlice: SliceLogger = createSlice({
 	},
 });
 
-export const selectLogIn: SelectorLogger = (state: RootState): LogInAction[] =>
-	state.logger.log;
+export const selectLogIn: SelectorLogger = ({
+	logger,
+}: RootState): LogInAction[] => logger.log;
 
-export const selectUser: SelectorUser = (state: RootState): UserIsRegister[] =>
-	state.logger.user;
+export const selectUser: SelectorUser = ({
+	logger,
+}: RootState): UserIsRegister[] => logger.user;
 
-export const selectSignUp: SelectorCreated = (
-	state: RootState
-): UserCreated[] => state.logger.out;
+export const selectSignUp: SelectorCreated = ({
+	logger,
+}: RootState): UserCreated[] => logger.out;
 
 export const { getUserIsLogIn, clearUserIfLogIn, validateUser, createUser } =
 	logInSlice.actions;

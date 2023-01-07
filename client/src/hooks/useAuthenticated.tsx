@@ -13,6 +13,8 @@ import {
 	validateUserIsRegister,
 } from '../features/logger/logInActions';
 import { selectLogIn, selectUser } from '../features/logger/logInSlice';
+import { generatedMail } from '../features/mailer/mailAction';
+import massive from '../utils/massive';
 import prevSubmit from '../utils/prevSubmit';
 import type { Auth, dispatcherUser, LocalStorage, Submit } from './hook';
 
@@ -73,6 +75,8 @@ function useAuthenticated(): Auth {
 
 						window.localStorage.setItem('password', password);
 
+						dispatch(generatedMail(massive(email, pathname)));
+
 						return navigate('/');
 				  })
 				: dispatch(getUser(prevSubmit({ email, password }, pathname)));
@@ -100,6 +104,7 @@ function useAuthenticated(): Auth {
 			};
 			!user.length &&
 				dispatch(postUserRegister(registered)) &&
+				dispatch(generatedMail(massive(email, pathname))) &&
 				navigate('/signIn/');
 		}
 	};

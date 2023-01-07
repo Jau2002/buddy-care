@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { Location, useLocation, useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../app/hook';
 import type { LogInAction } from '../features/logger/logger';
 import { selectLogIn } from '../features/logger/logInSlice';
@@ -7,7 +7,7 @@ import { getPet, getPets } from '../features/pets/petActions';
 import type { PetAction } from '../features/pets/pets';
 import { selectPet, selectPets } from '../features/pets/petSlice';
 import prevSubmit from '../utils/prevSubmit';
-import type { dispatchPets, Location, MedicalPets, Param } from './hook';
+import type { dispatchPets, MedicalPets, Param } from './hook';
 
 function useMedicalPets(): MedicalPets {
 	const { id }: Param = useParams();

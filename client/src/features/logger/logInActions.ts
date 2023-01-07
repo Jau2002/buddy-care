@@ -1,5 +1,5 @@
 import { Dispatch } from '@reduxjs/toolkit';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import type { Query } from '../../utils/utils';
 import type {
 	ClearUserAction,
@@ -21,7 +21,7 @@ import {
 
 export function getUser(query: Query): GetUserAction {
 	return async (dispatch: Dispatch): GetUser => {
-		const { data } = await axios.post('/query', query);
+		const { data }: AxiosResponse = await axios.post('/query', query);
 		try {
 			return dispatch(getUserIsLogIn(data));
 		} catch (err) {

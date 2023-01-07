@@ -28,3 +28,9 @@ interface Previous {
 	password: string;
 	id: number[];
 }
+
+interface Mail {
+	mail?: string;
+	asunto?: string;
+	cuerpo?: string;
+}

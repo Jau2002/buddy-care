@@ -1,5 +1,5 @@
 import { PayloadAction, Slice } from '@reduxjs/toolkit';
-import { RootState } from '../app/app';
+import type { RootState } from '../app/app';
 
 interface PetsState {
 	pets: never[];

@@ -29,11 +29,11 @@ const petSlice: SlicePet = createSlice({
 	},
 });
 
-export const selectPets: SelectorPets = (state: RootState): PetAction[] =>
-	state.pets.pets;
+export const selectPets: SelectorPets = ({ medical }: RootState): PetAction[] =>
+	medical.pets;
 
-export const selectPet: SelectorPet = (state: RootState): PetAction[] =>
-	state.pets.detailPet;
+export const selectPet: SelectorPet = ({ medical }: RootState): PetAction[] =>
+	medical.detailPet;
 
 export const { getPetForClient, getDetailPet } = petSlice.actions;
 
