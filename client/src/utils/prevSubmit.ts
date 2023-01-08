@@ -1,7 +1,7 @@
 import type { Query, Submit } from './utils';
 
 function prevSubmit(
-	{ email, password, id_client, id_pet }: Submit,
+	{ email, password, id_client, id_pet, search_article }: Submit,
 	path: string
 ): Query {
 	let query: Query = {};
@@ -29,6 +29,15 @@ function prevSubmit(
 			myQuery: `SELECT email from pfvet_clientes WHERE TRIM(email)='${email}' LIMIT 1;`,
 		};
 	}
+
+	if (path === '/shop') {
+		query = {
+			myQuery: `SELECT pfvet_articulos.*, pfvet_adjuntos.contenido FROM pfvet_articulos INNER JOIN pfvet_adjuntos ON pfvet_articulos.id=pfvet_adjuntos.id_originador WHERE TRIM(pfvet_adjuntos.originador)='ARTICULOS' AND pfvet_articulos.nombre LIKE '%${search_article
+				?.trim()
+				.toUpperCase()}%';`,
+		};
+	}
+
 	return query;
 }
 

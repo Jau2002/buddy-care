@@ -1,4 +1,5 @@
-import { PetAction } from '../features/pets/pets';
+import type { ArticleAction } from '../features/article/article';
+import type { PetAction } from '../features/pets/pets';
 import type { Attributes } from '../utils/utils';
 
 interface LinkRoutes {
@@ -36,4 +37,13 @@ interface Type {
 interface AllPets {
 	allUserPets?: PetAction[];
 	petForUser?: PetAction[];
+}
+
+interface CardArticles {
+	article: ArticleAction[];
+}
+
+interface Search {
+	search;
+	handleOnSearch;
 }

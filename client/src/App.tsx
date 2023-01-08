@@ -5,6 +5,7 @@ import LogIn from './pages/LogIn';
 import NotFound from './pages/NotFound';
 import PasswordRecovery from './pages/PasswordRecovery';
 import Pets from './pages/Pets';
+import Shop from './pages/Shop';
 import SingUp from './pages/SingUp';
 import UserValidate from './pages/UserValidate';
 
@@ -40,6 +41,10 @@ function App(): ReactElement {
 			<Route
 				path='/signUp'
 				element={<SingUp />}
+			/>
+			<Route
+				path='/shop'
+				element={<Shop />}
 			/>
 		</Routes>
 	);

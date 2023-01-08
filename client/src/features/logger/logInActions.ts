@@ -37,7 +37,7 @@ export const clearUser: ClearUserFunc =
 
 export function validateUserIsRegister(query: Query): ValidateUserIsRegister {
 	return async (dispatch: Dispatch): ValidateUser => {
-		const { data } = await axios.post('/query', query);
+		const { data }: AxiosResponse = await axios.post('/query', query);
 		try {
 			return dispatch(validateUser(data));
 		} catch (err) {
@@ -48,7 +48,7 @@ export function validateUserIsRegister(query: Query): ValidateUserIsRegister {
 
 export function postUserRegister(body: object): PostUserRegister {
 	return async (dispatch: Dispatch): CreateUser => {
-		const { data } = await axios.post('/clientes', body);
+		const { data }: AxiosResponse = await axios.post('/clientes', body);
 		try {
 			return dispatch(createUser(data));
 		} catch (err) {

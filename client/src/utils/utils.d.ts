@@ -21,6 +21,7 @@ interface Submit {
 	password?: string;
 	id_client?: number[];
 	id_pet?: PetAction;
+	search_article?: string;
 }
 
 interface Previous {
