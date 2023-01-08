@@ -15,14 +15,14 @@ function CardArticle({ article }: CardArticles): ReactElement {
 				}: ArticleAction): ReactElement => (
 					<div
 						key={id}
-						className='justify-content-center'
+						className='justify-content-center card'
 					>
-						<div className='card me-3'>
+						<div>
 							<div className='card-body'>
 								<img
 									src={contenido}
 									alt={nombre}
-									className='card-img-top'
+									className='card-img'
 								/>
 								<h5 className='card-title'>{nombre}</h5>
 								<p>{descripcion}</p>
