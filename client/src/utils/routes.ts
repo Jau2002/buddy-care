@@ -19,6 +19,6 @@ export const navigation: Navigate[] = [
 	},
 	{
 		route: 'Cuenta',
-		url: '/count',
+		url: '/account',
 	},
 ];

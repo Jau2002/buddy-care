@@ -1,7 +1,8 @@
 import { ThunkDispatch } from '@reduxjs/toolkit';
 import type { Params } from 'react-router-dom';
 import type { Type } from '../components/components';
-import type { LogInState } from '../features/logger/logger';
+import type { ArticleAction, ArticleState } from '../features/article/article';
+import type { LogInAction, LogInState } from '../features/logger/logger';
 import type { PetAction, PetsState } from '../features/pets/pets';
 
 type Submit = (values: Type) => any;
@@ -11,13 +12,8 @@ interface Auth {
 	defaultInputs: Type;
 	pathname: string;
 	useIsLogged: () => boolean;
+	logger: LogInAction[];
 }
-
-type dispatcherUser = ThunkDispatch<LogInState>;
-
-type dispatchedUser = ThunkDispatch<Clear>;
-
-type dispatchPets = ThunkDispatch<PetsState>;
 
 interface Cleaning {
 	handleClick;
@@ -30,6 +26,32 @@ interface MedicalPets {
 	id_pet?: PetAction;
 	petForUser: PetAction[];
 }
+
+interface Paging {
+	totalArticle: ArticleAction[];
+	currentPage: number;
+	handleNextPage;
+	totalPages: number;
+	handlePrevPage;
+	setTotalPages;
+}
+
+interface Filter {
+	search;
+	handleOnSearch;
+}
+
+interface Exclusive {
+	article: ArticleAction[];
+}
+
+type dispatcherArticles = ThunkDispatch<ArticleState>;
+
+type dispatcherUser = ThunkDispatch<LogInState>;
+
+type dispatchedUser = ThunkDispatch<Clear>;
+
+type dispatchPets = ThunkDispatch<PetsState>;
 
 type Param = Readonly<Params<string>>;
 

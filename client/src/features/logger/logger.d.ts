@@ -7,6 +7,14 @@ interface LogInAction {
 	apellido: string;
 	nombres: string;
 	id: number;
+	cp: number;
+	falta: number;
+	instagram: string;
+	facebook: string;
+	localidad: string;
+	pais: string;
+	telefono: number;
+	notas_int: string;
 }
 interface UserIsRegister {
 	email: string;

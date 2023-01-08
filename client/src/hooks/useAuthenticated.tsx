@@ -82,6 +82,11 @@ function useAuthenticated(): Auth {
 				: dispatch(getUser(prevSubmit({ email, password }, pathname)));
 		}
 
+		if (pathname === '/signIn/user') {
+			dispatch(validateUserIsRegister(prevSubmit({ email }, pathname)));
+			user.length && navigate('/signIn/password');
+		}
+
 		if (pathname === '/signUp') {
 			dispatch(validateUserIsRegister(prevSubmit({ email }, pathname)));
 			const registered = {
@@ -124,7 +129,7 @@ function useAuthenticated(): Auth {
 		Instagram: '',
 	};
 
-	return { handleSubmit, defaultInputs, pathname, useIsLogged };
+	return { handleSubmit, defaultInputs, pathname, useIsLogged, logger };
 }
 
 export default useAuthenticated;

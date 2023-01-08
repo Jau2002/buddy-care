@@ -1,10 +1,12 @@
 import type { ReactElement } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Account from './pages/Account';
 import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import NotFound from './pages/NotFound';
 import PasswordRecovery from './pages/PasswordRecovery';
 import Pets from './pages/Pets';
+import Shop from './pages/Shop';
 import SingUp from './pages/SingUp';
 import UserValidate from './pages/UserValidate';
 
@@ -40,6 +42,14 @@ function App(): ReactElement {
 			<Route
 				path='/signUp'
 				element={<SingUp />}
+			/>
+			<Route
+				path='/shop'
+				element={<Shop />}
+			/>
+			<Route
+				path='/account'
+				element={<Account />}
 			/>
 		</Routes>
 	);
