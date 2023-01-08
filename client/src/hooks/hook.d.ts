@@ -2,7 +2,7 @@ import { ThunkDispatch } from '@reduxjs/toolkit';
 import type { Params } from 'react-router-dom';
 import type { Type } from '../components/components';
 import type { ArticleAction, ArticleState } from '../features/article/article';
-import type { LogInState } from '../features/logger/logger';
+import type { LogInAction, LogInState } from '../features/logger/logger';
 import type { PetAction, PetsState } from '../features/pets/pets';
 
 type Submit = (values: Type) => any;
@@ -12,6 +12,7 @@ interface Auth {
 	defaultInputs: Type;
 	pathname: string;
 	useIsLogged: () => boolean;
+	logger: LogInAction[];
 }
 
 interface Cleaning {

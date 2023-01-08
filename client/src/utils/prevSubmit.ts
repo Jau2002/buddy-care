@@ -8,11 +8,11 @@ function prevSubmit(
 
 	if (path === ('/signIn/' || '/pets' || '/pet/')) {
 		query = {
-			myQuery: `SELECT email, password, apellido, nombres, id FROM pfvet_clientes WHERE TRIM(email)='${email}' AND TRIM(password)='${password}' LIMIT 1;`,
+			myQuery: `SELECT * FROM pfvet_clientes WHERE TRIM(email)='${email}' AND TRIM(password)='${password}' LIMIT 1;`,
 		};
 	}
 
-	if (path === '/pets') {
+	if (['/pets', '/account'].includes(path)) {
 		query = {
 			myQuery: `SELECT pfvet_mascotas.*, pfvet_adjuntos.* FROM pfvet_mascotas INNER JOIN pfvet_adjuntos ON pfvet_mascotas.id=pfvet_adjuntos.id_originador WHERE pfvet_mascotas.id_cliente=${id_client} AND TRIM(originador)='MASCOTA';`,
 		};

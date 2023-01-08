@@ -1,5 +1,6 @@
 import type { ReactElement } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Account from './pages/Account';
 import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import NotFound from './pages/NotFound';
@@ -45,6 +46,10 @@ function App(): ReactElement {
 			<Route
 				path='/shop'
 				element={<Shop />}
+			/>
+			<Route
+				path='/account'
+				element={<Account />}
 			/>
 		</Routes>
 	);

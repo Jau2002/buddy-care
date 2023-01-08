@@ -129,7 +129,7 @@ function useAuthenticated(): Auth {
 		Instagram: '',
 	};
 
-	return { handleSubmit, defaultInputs, pathname, useIsLogged };
+	return { handleSubmit, defaultInputs, pathname, useIsLogged, logger };
 }
 
 export default useAuthenticated;
