@@ -15,7 +15,7 @@ function CardArticle({ article }: CardArticles): ReactElement {
 				}: ArticleAction): ReactElement => (
 					<div
 						key={id}
-						className='justify-content-center card'
+						className='justify-content-center card-div'
 					>
 						<div>
 							<div className='card-body'>

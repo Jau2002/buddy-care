@@ -1,4 +1,4 @@
-.card{
+.card-div {
     background-color: #00d9ff;;
     font-family: 'Holtwood One SC';
     margin-left: 50PX;
@@ -7,11 +7,13 @@
     margin-top: 30px;
     margin-bottom: 15px;
     border: 1px solid black;
+    border-radius: 20px;
 }
 
 .card-img {
+    margin-top: 15px;
     margin-bottom: 20px;
-    max-height: 100PX;
+    max-height: 150PX;
     width: 100%;
     border: 1px solid black;
     border-radius: 20px;
